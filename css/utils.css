@@ -1,0 +1,24 @@
+.hide{
+    display :none;
+    visibility: hidden;
+    position: absolute;
+    left: -10000px;
+    top: -10000px;}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 20;
+
+    min-width: 400px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mark {
+    color: #FF9826;
+}
+
+
