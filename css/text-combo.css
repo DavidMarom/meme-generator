@@ -13,8 +13,25 @@
 
 .combo-toolbar {
     /* height: 70px; */
-    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 15px;
     border-bottom: 1px solid #DBDBDB;
+}
+
+.combo-toolbar2 {
+    /* height: 70px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 15px;
 }
 
 .line-edit{
@@ -30,3 +47,8 @@
     font-family: Roboto;
 }
 
+.text-btns{
+
+    border: 0;
+    background-color: #ffffff00;
+}

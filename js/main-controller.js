@@ -12,9 +12,7 @@ function onThClicked(image) {
 }
 
 function onTextChange(lineNum) {
-
     gMeme.lines[gMeme.selectedLineIdx].txt = document.getElementById('line-a').value;
-
     renderCanvas();
 }
 
@@ -30,11 +28,31 @@ function onFontChange(fontName) {
 }
 
 function onFontUp() {
-    gMeme.lines[gMeme.selectedLineIdx].size++;
+    gMeme.lines[gMeme.selectedLineIdx].size += 2;
     renderCanvas();
 }
 
 function onFontDown() {
-    gMeme.lines[gMeme.selectedLineIdx].size--;
+    gMeme.lines[gMeme.selectedLineIdx].size -= 2;
     renderCanvas();
+}
+
+function onStrokeUp() {
+    gMeme.lines[gMeme.selectedLineIdx].lineWidth += 1;
+    renderCanvas();
+}
+
+function onStrokeDown() {
+    gMeme.lines[gMeme.selectedLineIdx].lineWidth -= 1;
+    renderCanvas();
+}
+
+function onAlignClicked(side) {
+    gMeme.lines[gMeme.selectedLineIdx].align = side;
+    renderCanvas();
+    console.log(side);
+}
+
+function onSaveLocal() {
+    saveToLocalhost();
 }

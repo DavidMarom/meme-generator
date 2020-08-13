@@ -15,21 +15,22 @@ var gMeme = {
     lines: [{
             txt: 'Top text',
             size: 80,
-            align: 'left',
+            align: 'center',
             color: '#000000',
             colorFill: '#ffffff',
             font:'Impact',
-
+            lineWidth: 4,
             x: 275,
             y: 70
         },
         {
             txt: 'Bottom text',
             size: 40,
-            align: 'left',
+            align: 'center',
             color: '#000000',
             colorFill: '#ffffff',
             font:'Impact',
+            lineWidth: 2,
 
             x: 275,
             y: 500
@@ -40,6 +41,9 @@ var gMeme = {
 
 function init() {
     populateGallery();
+
+    // loadFromLocalhost();
+
 }
 
 // RENDER GALLERY
@@ -51,17 +55,12 @@ function populateGallery() {
         strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
     }
     el.innerHTML = strHTML;
-
 }
 
-
 function updatePanel() {
-
-    // document.getElementById('line-a').innerText = gMeme.lines[gMeme.selectedLineIdx].txt;
-
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
     document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
 
-
 }
+

@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Meme Generator</title>
     <meta name="description" content="">
+    <link rel="icon" type="image/png" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/bb58fef941.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/text-combo.css">
@@ -17,7 +20,7 @@
 
     <div class="header">
         <a href="index.html">
-        <div class="logo"><img src="img/logo.png" height="30px"></div>
+            <div class="logo"><img src="img/logo.png" height="30px"></div>
         </a>
 
         <div class="buttons">
@@ -48,7 +51,8 @@
                 <div class="back-to-gallery">
                     <button onclick="onMenuClicked('gallery')">Back to gallery</button>
                 </div>
-                <canvas id="myCanvas" class="canvas" height="550" width="550" onmousedown="canvasDown(event)" onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
+                <canvas id="myCanvas" class="canvas" height="550" width="550" onmousedown="canvasDown(event)"
+                    onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
             </div>
 
             <div class="editor-area">
@@ -58,29 +62,55 @@
                     <div class="combo-toolbar">
 
                         <!-- FONT -->
-                        <input list="font-list" placeholder="Font" name="font-select" id="font-select" onchange="onFontChange(this.value)">
+                        <input list="font-list" placeholder="Font" name="font-select" id="font-select"
+                            onchange="onFontChange(this.value)">
                         <datalist id="font-list">
                             <option value="Impact">
                             <option value="Arial">
-
                         </datalist>
 
                         <!-- COLOR -->
-                        <input type="color" class="color-picker" value="#000000" onchange="onColorSelect(this.value)" />
-                        <!-- FONT SIZE -->
-                        <button id="fontUp" onclick="onFontUp()">+</button>
-                        <button id="fontDown" onclick="onFontDown()">-</button>
 
+                        <!-- FONT SIZE -->
+                        <button class="" id="fontUp" onclick="onFontUp()">+</button>
+                        <button class="" id="fontDown" onclick="onFontDown()">-</button>
+                        <button class="fas fa-align-left" onclick="onAlignClicked('left')"></button>
+                        <button class="fas fa-align-center" onclick="onAlignClicked('center')"></button>
+                        <button class="fas fa-align-right" onclick="onAlignClicked('right')"></button>
+                    </div>
+
+
+                    <div class="combo-toolbar">
+
+                        <p>Stroke :</p>
+                        <input type="color" class="color-picker" value="#000000" onchange="onColorSelect(this.value)" />
+
+                        <button class="" id="fontUp" onclick="onStrokeUp()">+</button>
+                        <button class="" id="fontDown" onclick="onStrokeDown()">-</button>
 
                     </div>
 
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input type="text" placeholder="Select a title" id="line-a" onkeyup="onTextChange()" />
+                        <input type="text" placeholder="← Select a title" id="line-a" onkeyup="onTextChange()" />
 
                     </div>
+                    <div class="combo-toolbar2">
+                        <!-- DOWNLOAD AND SHARE -->
+                        <a href="#" class="download-btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+                        <a href="#" class="fb-btn" onclick="downloadImg(this)" download="my-img.jpg">Share</a>
+                    </div>
 
-                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpg</a>
+                    <!-- <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="fb-btn" type="submit">Publish</button>
+                        
+                        <div class="share-container"></div>
+                      </form> -->
+
+                    <!-- SAVE TO LOCAL -->
+                    <!-- <button onclick="onSaveLocal()">Save to memes</button> -->
+
 
                 </div>
             </div>
@@ -89,11 +119,16 @@
         <!-- MEMES PAGE -->
         <div class="memes hide">
             <p>Memes page</p>
+
+            <div class="memes-gallery"></div>
+
+
         </div>
 
         <!-- ABOUT PAGE -->
         <div class="about hide">
-            <p>About page</p>
+            <h1>Meme Generator v1.0</h1>
+            <p>This meme generator was developed by David Marom as part of the Coding Academy course. 2020.</p>
         </div>
     </div>
 

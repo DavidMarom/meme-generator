@@ -21,4 +21,38 @@
     color: #FF9826;
 }
 
+.download-btn{
 
+    padding:10px;
+    border-radius: 5px;
+    background-color: #f8af26;
+    color: #ffffff;
+    max-width: 100px;
+    text-align:center ;
+    margin: 10px;
+    text-decoration: none;
+
+}
+
+.fb-btn{
+
+    padding:10px;
+    border-radius: 5px;
+    background-color: #0c10d1;
+    color: #ffffff;
+    max-width: 100px;
+    text-align:center ;
+    margin: 10px;
+    text-decoration: none;
+
+}
+
+input{
+    height: 22px;
+    font-size: 17px;
+}
+
+.line-edit input{
+    font-size: 22px;
+
+}

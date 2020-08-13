@@ -19,9 +19,6 @@ function openEditor() {
     document.querySelector(`.editor-page`).classList.remove('hide');
     document.querySelector('.canvas').classList.remove('hide');
     renderCanvas();
-
-
-
 }
 
 function hideAll() {

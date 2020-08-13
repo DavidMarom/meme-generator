@@ -18,7 +18,7 @@ function drawImg(imgToLoad) {
 }
 
 function drawText(lineNum, x, y) {
-    gCtx.lineWidth = '2';
+    gCtx.lineWidth = gMeme.lines[lineNum].lineWidth;
     gCtx.strokeStyle = gMeme.lines[lineNum].color;
     gCtx.fillStyle = gMeme.lines[lineNum].colorFill;
 
@@ -26,7 +26,7 @@ function drawText(lineNum, x, y) {
 
     gCtx.font = fontStr;
 
-    gCtx.textAlign = 'center';
+    gCtx.textAlign = gMeme.lines[lineNum].align;
     gCtx.fillText(gMeme.lines[lineNum].txt, x, y);
     gCtx.strokeText(gMeme.lines[lineNum].txt, x, y);
 }
@@ -56,9 +56,7 @@ function canvasDown(ev) {
 
 function canvasUp(ev) {
     gMouse = 'up';
-
     document.getElementById("line-a").focus();
-
 }
 
 function canvasMove(ev) {
