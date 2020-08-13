@@ -16,8 +16,9 @@
 <body onload="init()">
 
     <div class="header">
-
+        <a href="index.html">
         <div class="logo"><img src="img/logo.png" height="30px"></div>
+        </a>
 
         <div class="buttons">
             <ul class="clean-list">
@@ -47,7 +48,7 @@
                 <div class="back-to-gallery">
                     <button onclick="onMenuClicked('gallery')">Back to gallery</button>
                 </div>
-                <canvas id="myCanvas" class="canvas" height="550" width="550"> </canvas>
+                <canvas id="myCanvas" class="canvas" height="550" width="550" onmousedown="canvasDown(event)" onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
             </div>
 
             <div class="editor-area">
@@ -55,7 +56,7 @@
 
                 <div class="text-combo">
                     <div class="combo-toolbar">
-                        
+
                         <!-- FONT -->
                         <input list="font-list" placeholder="Font" name="font-select" id="font-select">
                         <datalist id="font-list">
@@ -71,13 +72,12 @@
 
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input type="text" placeholder="Type here" id="line-a" onkeyup="onTextChange(0)" />
-                        <input type="text" placeholder="Type here" id="line-b" onkeyup="onTextChange(1)" />
+                        <input type="text" placeholder="Top text" id="line-a" onkeyup="onTextChange(0)" />
+                        <input type="text" placeholder="Buttom text" id="line-b" onkeyup="onTextChange(1)" />
 
                     </div>
 
-                    <button class="btn" type="submit">Publish</button>
-    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpg</a>
+                    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpg</a>
 
                 </div>
             </div>
@@ -98,6 +98,7 @@
     <script src="js/main-controller.js"></script>
     <script src="js/canvas-utils.js"></script>
     <script src="js/pagination.js"></script>
+    <script src="js/files-service.js"></script>
 
 </body>
 

@@ -20,7 +20,6 @@ function onTextChange(lineNum) {
         gMeme.lines[1].txt = document.getElementById('line-b').value;
     }
     renderCanvas();
-
 }
 
 function onColorSelect(scolor, lineNumber) {
@@ -28,10 +27,3 @@ function onColorSelect(scolor, lineNumber) {
     // gMeme.lines[lineNumber].color = document.getElementById('line-a').value;
     renderCanvas();
 }
-
-
-function onSaveClicked(){
-
-    
-}
-

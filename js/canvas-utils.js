@@ -1,12 +1,13 @@
 var gCanvas = document.getElementById('myCanvas');
 var gCtx = gCanvas.getContext('2d');
+var gMouse ='up';
 
 function renderCanvas() {
     drawImg(gMeme.selectedImgId);
 
-    drawText(0, 275, 70);
-    drawText(1, 275, 500);
-    
+    drawText(0, gMeme.lines[0].x, gMeme.lines[0].y);
+    drawText(1, gMeme.lines[1].x, gMeme.lines[1].y);
+
 }
 
 function drawImg(imgToLoad) {
@@ -21,10 +22,10 @@ function drawText(lineNum, x, y) {
     gCtx.strokeStyle = gMeme.lines[lineNum].color;
     gCtx.fillStyle = gMeme.lines[lineNum].colorFill;
 
-    let fontStr = gMeme.lines[lineNum].size+ 'px Impact';
+    let fontStr = gMeme.lines[lineNum].size + 'px Impact';
 
     gCtx.font = fontStr;
-    
+
     gCtx.textAlign = 'center';
     gCtx.fillText(gMeme.lines[lineNum].txt, x, y);
     gCtx.strokeText(gMeme.lines[lineNum].txt, x, y);
@@ -37,23 +38,33 @@ function resizeCanvas() {
     gCanvas.height = elContainer.offsetHeight;
 }
 
-function uploadImg(elForm, ev) {
-    ev.preventDefault();
-    document.getElementById('imgData').value = gCanvas.toDataURL("image/jpeg");
-
-    // A function to be called if request succeeds
-    function onSuccess(uploadedImgUrl) {
-        uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-        document.querySelector('.share-container').innerHTML = `
-        <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-           Share   
-        </a>`
+function canvasDown(ev) {
+    gMouse = 'down';
+    const {
+        offsetX,
+        offsetY
+    } = ev;
+    if ((Math.abs(offsetY - gMeme.lines[0].y)) + (Math.abs(offsetX - gMeme.lines[0].y)) < (Math.abs(offsetY - gMeme.lines[1].y)) + (Math.abs(offsetX - gMeme.lines[1].y))) {
+        gMeme.selectedLineIdx = 0;
+    } else {
+        gMeme.selectedLineIdx = 1;
     }
-    doUploadImg(elForm, onSuccess);
 }
 
+function canvasUp(ev) {
+    gMouse = 'up';
+}
 
-function downloadImg(elLink) {
-    var imgContent = gCanvas.toDataURL('/gallery');
-    elLink.href = imgContent
+function canvasMove(ev) {
+    if (gMouse === 'down') {
+
+    const {
+        offsetX,
+        offsetY
+    } = ev;
+
+        gMeme.lines[gMeme.selectedLineIdx].x = offsetX;
+        gMeme.lines[gMeme.selectedLineIdx].y = offsetY;
+        renderCanvas();
+    }
 }

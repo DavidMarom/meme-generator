@@ -19,8 +19,8 @@ var gMeme = {
         color: 'black',
         colorFill: 'white',
         
-        x:250,
-        y:20
+        x:275,
+        y:70
     },
     {
         txt: 'Bottom text',
@@ -29,8 +29,8 @@ var gMeme = {
         color: 'black',
         colorFill: 'white',
         
-        x:250,
-        y:20
+        x:275,
+        y:500
 
     }]
 }
