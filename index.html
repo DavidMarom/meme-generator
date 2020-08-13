@@ -58,7 +58,7 @@
                     <div class="combo-toolbar">
 
                         <!-- FONT -->
-                        <input list="font-list" placeholder="Font" name="font-select" id="font-select">
+                        <input list="font-list" placeholder="Font" name="font-select" id="font-select" onchange="onFontChange(this.value)">
                         <datalist id="font-list">
                             <option value="Impact">
                             <option value="Arial">
@@ -66,14 +66,17 @@
                         </datalist>
 
                         <!-- COLOR -->
-                        <input type="color" onchange="onColorSelect(this.value,0)" />
+                        <input type="color" class="color-picker" value="#000000" onchange="onColorSelect(this.value)" />
+                        <!-- FONT SIZE -->
+                        <button id="fontUp" onclick="onFontUp()">+</button>
+                        <button id="fontDown" onclick="onFontDown()">-</button>
+
 
                     </div>
 
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input type="text" placeholder="Top text" id="line-a" onkeyup="onTextChange(0)" />
-                        <input type="text" placeholder="Buttom text" id="line-b" onkeyup="onTextChange(1)" />
+                        <input type="text" placeholder="Select a title" id="line-a" onkeyup="onTextChange()" />
 
                     </div>
 

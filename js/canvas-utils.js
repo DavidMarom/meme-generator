@@ -22,7 +22,7 @@ function drawText(lineNum, x, y) {
     gCtx.strokeStyle = gMeme.lines[lineNum].color;
     gCtx.fillStyle = gMeme.lines[lineNum].colorFill;
 
-    let fontStr = gMeme.lines[lineNum].size + 'px Impact';
+    let fontStr = gMeme.lines[lineNum].size + 'px '+ gMeme.lines[lineNum].font;
 
     gCtx.font = fontStr;
 
@@ -40,6 +40,7 @@ function resizeCanvas() {
 
 function canvasDown(ev) {
     gMouse = 'down';
+
     const {
         offsetX,
         offsetY
@@ -49,10 +50,15 @@ function canvasDown(ev) {
     } else {
         gMeme.selectedLineIdx = 1;
     }
+
+    updatePanel();
 }
 
 function canvasUp(ev) {
     gMouse = 'up';
+
+    document.getElementById("line-a").focus();
+
 }
 
 function canvasMove(ev) {

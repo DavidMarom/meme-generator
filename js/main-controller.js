@@ -12,18 +12,29 @@ function onThClicked(image) {
 }
 
 function onTextChange(lineNum) {
-    if (lineNum === 0) {
-        gMeme.lines[0].txt = document.getElementById('line-a').value;
-    }
 
-    if (lineNum === 1) {
-        gMeme.lines[1].txt = document.getElementById('line-b').value;
-    }
+    gMeme.lines[gMeme.selectedLineIdx].txt = document.getElementById('line-a').value;
+
     renderCanvas();
 }
 
-function onColorSelect(scolor, lineNumber) {
-    gMeme.lines[lineNumber].color = scolor;
+function onColorSelect(scolor) {
+    gMeme.lines[gMeme.selectedLineIdx].color = scolor;
     // gMeme.lines[lineNumber].color = document.getElementById('line-a').value;
+    renderCanvas();
+}
+
+function onFontChange(fontName) {
+    gMeme.lines[gMeme.selectedLineIdx].font = fontName;
+    renderCanvas();
+}
+
+function onFontUp() {
+    gMeme.lines[gMeme.selectedLineIdx].size++;
+    renderCanvas();
+}
+
+function onFontDown() {
+    gMeme.lines[gMeme.selectedLineIdx].size--;
     renderCanvas();
 }

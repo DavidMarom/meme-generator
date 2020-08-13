@@ -13,26 +13,29 @@ var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'Top text',
-        size: 80,
-        align: 'left',
-        color: 'black',
-        colorFill: 'white',
-        
-        x:275,
-        y:70
-    },
-    {
-        txt: 'Bottom text',
-        size: 40,
-        align: 'left',
-        color: 'black',
-        colorFill: 'white',
-        
-        x:275,
-        y:500
+            txt: 'Top text',
+            size: 80,
+            align: 'left',
+            color: '#000000',
+            colorFill: '#ffffff',
+            font:'Impact',
 
-    }]
+            x: 275,
+            y: 70
+        },
+        {
+            txt: 'Bottom text',
+            size: 40,
+            align: 'left',
+            color: '#000000',
+            colorFill: '#ffffff',
+            font:'Impact',
+
+            x: 275,
+            y: 500
+
+        }
+    ]
 }
 
 function init() {
@@ -48,5 +51,17 @@ function populateGallery() {
         strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
     }
     el.innerHTML = strHTML;
+
+}
+
+
+function updatePanel() {
+
+    // document.getElementById('line-a').innerText = gMeme.lines[gMeme.selectedLineIdx].txt;
+
+    document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
+    document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
+    document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
+
 
 }
