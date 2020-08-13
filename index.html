@@ -36,7 +36,6 @@
             </div>
             <div class="thumbnails">
                 <!-- Populated by JS -->
-
             </div>
         </div>
 
@@ -58,7 +57,29 @@
 
 
             <div class="editor-area">
-                <input type="text" id="line-a" value="" onkeydown="renderCanvas()" />
+                <h2>Edit Text Lines</h2>
+
+                <div class="text-combo">
+                    <div class="combo-toolbar">
+
+                        <input list="font-list" placeholder="Font" name="font-select" id="font-select">
+                        <datalist id="font-list">
+                            <option value="Impact">
+                            <option value="Arial">
+
+                        </datalist>
+
+
+                        <input type="color" onchange="onColorSelect(this.value,0)" />
+
+                    </div>
+                    <div class="line-edit">
+                        <input type="text" placeholder="Type here" id="line-a" onkeyup="onTextChange(0)" />
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
 

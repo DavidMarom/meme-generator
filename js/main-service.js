@@ -10,18 +10,15 @@ var gImgs = [{
 }];
 
 var gMeme = {
-    selectedImgId: 5,
+    selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
         txt: 'I never eat Falafel',
         size: 20,
         align: 'left',
-        color: 'red'
+        color: 'blue'
     }]
 }
-
-var gCanvas;
-var gCtx;
 
 var gPage = 'gallery';
 
