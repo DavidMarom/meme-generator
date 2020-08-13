@@ -5,7 +5,7 @@ var gKeywords = {
 
 var gImgs = [{
     id: 1,
-    url: 'img/popo.jpg',
+    url: '',
     keywords: ['happy']
 }];
 
@@ -13,19 +13,33 @@ var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'I never eat Falafel',
-        size: 20,
+        txt: 'Top text',
+        size: 80,
         align: 'left',
-        color: 'blue'
+        color: 'black',
+        colorFill: 'white',
+        
+        x:250,
+        y:20
+    },
+    {
+        txt: 'Bottom text',
+        size: 40,
+        align: 'left',
+        color: 'black',
+        colorFill: 'white',
+        
+        x:250,
+        y:20
+
     }]
 }
-
-var gPage = 'gallery';
 
 function init() {
     populateGallery();
 }
 
+// RENDER GALLERY
 function populateGallery() {
     var strHTML = '';
     var el = document.querySelector('.thumbnails');

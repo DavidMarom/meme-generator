@@ -13,13 +13,15 @@ function updateMenu(page){
 
 }
 
-function openEditor(image) {
+function openEditor() {
     hideAll();
     // reveal the editor
     document.querySelector(`.editor-page`).classList.remove('hide');
     document.querySelector('.canvas').classList.remove('hide');
+    renderCanvas();
 
-    drawImg(image);
+
+
 }
 
 function hideAll() {

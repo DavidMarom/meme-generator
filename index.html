@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/text-combo.css">
+
 </head>
 
 <body onload="init()">
@@ -41,9 +43,6 @@
 
         <!-- EDITOR PAGE -->
         <div class="editor-page hide">
-
-
-
             <div class="left-side">
                 <div class="back-to-gallery">
                     <button onclick="onMenuClicked('gallery')">Back to gallery</button>
@@ -51,17 +50,13 @@
                 <canvas id="myCanvas" class="canvas" height="550" width="550"> </canvas>
             </div>
 
-
-
-
-
-
             <div class="editor-area">
                 <h2>Edit Text Lines</h2>
 
                 <div class="text-combo">
                     <div class="combo-toolbar">
-
+                        
+                        <!-- FONT -->
                         <input list="font-list" placeholder="Font" name="font-select" id="font-select">
                         <datalist id="font-list">
                             <option value="Impact">
@@ -69,17 +64,22 @@
 
                         </datalist>
 
-
+                        <!-- COLOR -->
                         <input type="color" onchange="onColorSelect(this.value,0)" />
 
                     </div>
+
+                    <!-- TEXT EDIT -->
                     <div class="line-edit">
                         <input type="text" placeholder="Type here" id="line-a" onkeyup="onTextChange(0)" />
+                        <input type="text" placeholder="Type here" id="line-b" onkeyup="onTextChange(1)" />
+
                     </div>
 
+                    <button class="btn" type="submit">Publish</button>
+    <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpg</a>
 
                 </div>
-
             </div>
         </div>
 

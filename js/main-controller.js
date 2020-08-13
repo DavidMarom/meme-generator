@@ -1,43 +1,37 @@
 function onMenuClicked(page) {
-
     gPage = page;
     hideAll();
     pageTo(page);
     updateMenu(page);
-
 }
 
 function onThClicked(image) {
-
     gMeme.selectedImgId = image;
     gMeme.selectedLineIdx = 0;
-
-
-
-    openEditor(image);
+    openEditor();
 }
 
+function onTextChange(lineNum) {
+    if (lineNum === 0) {
+        gMeme.lines[0].txt = document.getElementById('line-a').value;
+    }
 
-function onTextChange(lineNumber) {
-    
-    gMeme.lines[lineNumber].txt = document.getElementById('line-a').value;
+    if (lineNum === 1) {
+        gMeme.lines[1].txt = document.getElementById('line-b').value;
+    }
     renderCanvas();
 
 }
 
-
-function onColorSelect(scolor,lineNumber){
+function onColorSelect(scolor, lineNumber) {
     gMeme.lines[lineNumber].color = scolor;
     // gMeme.lines[lineNumber].color = document.getElementById('line-a').value;
     renderCanvas();
 }
 
-// var gMeme = {
-//     selectedImgId: 1,
-//     selectedLineIdx: 0,
-//     lines: [{
-//         txt: 'I never eat Falafel',
-//         size: 20,
-//         align: 'left',
-//         color: 'red'
-//     }]
+
+function onSaveClicked(){
+
+    
+}
+

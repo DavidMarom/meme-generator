@@ -37,36 +37,6 @@ h2 {
     cursor: pointer;
 }
 
-.text-combo {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin: 20px;
-    padding: 0px;
-    border-radius: 10px;
-    /* height: 42px; */
-    border: 1px solid #e7e7e7;
-    width: 100%;
-    background-color: #fff;
-}
-
-.combo-toolbar {
-    /* height: 70px; */
-    padding: 10px;
-    border-bottom: 1px solid #DBDBDB;
-}
-
-.line-edit input {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 42px;
-    border: 0px;
-    margin-left: 20px;
-    width: 100%;
-    font-family: Roboto;
-
-}
-
 
 
 .container {
