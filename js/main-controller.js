@@ -56,5 +56,11 @@ function onAlignClicked(side) {
 function onSaveLocal() {
     saveToLocalStorage();
     populateMemes();
+    pageTo('memes');
+}
 
+function onDeleteMemeClicked(number) {
+    gLocalStore.splice(number, 1);
+    saveToStorage('memes',gLocalStore);
+    populateMemes();
 }

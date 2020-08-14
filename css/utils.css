@@ -31,7 +31,18 @@
     text-align:center ;
     margin: 10px;
     text-decoration: none;
+}
 
+.save-btn{
+    padding:10px;
+    border-radius: 5px;
+    background-color: #0cdd16;
+    color: #ffffff;
+    max-width: 200px;
+    text-align:center ;
+    margin: 10px;
+    text-decoration: none;
+    border:0;
 }
 
 .fb-btn{

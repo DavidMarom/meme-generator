@@ -1,12 +1,17 @@
 function pageTo(page) {
     // debugger;
     document.querySelector(`.${page}`).classList.remove('hide');
+
+    if (page === 'memes') {
+        document.querySelector('.editor-page').classList.add('hide');
+        updateMenu('memes');
+    }
     populateMemes();
 
-   
+
 }
 
-function updateMenu(page){
+function updateMenu(page) {
     document.querySelector('.memes-button').classList.remove('mark');
     document.querySelector('.gallery-button').classList.remove('mark');
     document.querySelector('.about-button').classList.remove('mark');
@@ -31,7 +36,7 @@ function hideAll() {
 
     // document.querySelector('.canvas').classList.add('hide');
 
-    
+
 
 
 }

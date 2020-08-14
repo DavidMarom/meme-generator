@@ -41,14 +41,22 @@ var gMeme = {
     ]
 }
 
+function loadDump() {
+    gLocalStore = [];
+    saveToStorage('memes', gLocalStore);
+    // populateMemes();
+}
+
+
 function init() {
 
-    if (!localStorage.getItem('memes')) {
-        saveToStorage('memes', gLocalStore);
-
+    if (!loadFromStorage('memes') || loadFromStorage('memes') == '') { // if nothing in storage
+        loadDump();
     } else {
-        gLocalStore = loadFromStorage('memes')
+        gLocalStore = loadFromStorage('memes');
     }
+
+
     populateGallery();
     populateMemes();
 
@@ -67,11 +75,15 @@ function populateGallery() {
 
 // RENDER MEMES
 function populateMemes() {
+
     var strHTML = '';
     var el = document.querySelector('.thumbnails2');
 
     for (var i = 0; i < gLocalStore.length; i++) {
-        strHTML += `<img src="" class="thumbnail ttt${i}"/>`;
+        strHTML += `<div class="father">
+                        <img src="" class="thumbnail2 ttt${i}"/>
+                        <div class="son trash-btn"><i class="fas fa-2x fa-trash-alt" width="30px" onclick="onDeleteMemeClicked(${i})"></i></div>
+                    </div>`;
     }
 
     el.innerHTML = strHTML;
@@ -79,10 +91,7 @@ function populateMemes() {
     for (var i = 0; i < gLocalStore.length; i++) {
         document.querySelector(`.ttt${i}`).setAttribute("src", gLocalStore[i]);
     }
-
- 
 }
-
 
 function updatePanel() {
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;

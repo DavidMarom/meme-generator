@@ -19,3 +19,32 @@
     grid-auto-flow: dense;
 }
 
+.father {
+    position: relative;
+}
+
+.son {
+    position: absolute;
+    top: 30px;
+    left: 180px;
+}
+
+.trash-btn {
+    z-index: 2;
+    color: #ffffff;
+    opacity: 50%;
+    filter: drop-shadow(2px 2px 2px #000000);
+}
+
+.trash-btn:hover {
+    z-index: 2;
+    opacity: 100%;
+    color:#ff5040;
+}
+
+
+.thumbnail2 {
+    border-radius: 30px;
+    grid-column: auto / span 1;
+    position: relative;
+}

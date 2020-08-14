@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Meme Generator</title>
     <meta name="description" content="">
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/bb58fef941.js" crossorigin="anonymous"></script>
 
@@ -25,8 +25,8 @@
 
         <div class="buttons">
             <ul class="clean-list">
-                <li onclick="onMenuClicked('memes')" class="memes-button">Memes</li>
-                <li onclick="onMenuClicked('gallery')" class="gallery-button mark">Gallery</li>
+                <li onclick="onMenuClicked('memes')" class="memes-button">My Memes</li>
+                <li onclick="onMenuClicked('gallery')" class="gallery-button mark">Create a Meme!</li>
                 <li onclick="onMenuClicked('about')" class="about-button">About</li>
             </ul>
         </div>
@@ -99,6 +99,8 @@
                         <!-- DOWNLOAD AND SHARE -->
                         <a href="#" class="download-btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
                         <a href="#" class="fb-btn" onclick="downloadImg(this)" download="my-img.jpg">Share</a>
+                        <button class="save-btn" onclick="onSaveLocal()">Save to memes</button>
+
                     </div>
 
                     <!-- <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
@@ -109,7 +111,6 @@
                       </form> -->
 
                     <!-- SAVE TO LOCAL -->
-                    <button onclick="onSaveLocal()">Save to memes</button>
 
 
                 </div>
@@ -118,10 +119,11 @@
 
         <!--****************************************************** MEMES PAGE -->
         <div class="memes hide">
-
+            
             <div class="thumbnails2">
                 <!-- Populated by JS -->
-
+                <h1>You dont have any memes yet!</h1>
+                <h2>Your saved memes will appear here</h2>    
             </div>
            
 
