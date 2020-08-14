@@ -1,6 +1,8 @@
 function pageTo(page) {
     // debugger;
     document.querySelector(`.${page}`).classList.remove('hide');
+    populateMemes();
+
    
 }
 

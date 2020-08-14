@@ -12,12 +12,12 @@
 
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/memes.css">
     <link rel="stylesheet" href="css/text-combo.css">
 
 </head>
 
 <body onload="init()">
-
     <div class="header">
         <a href="index.html">
             <div class="logo"><img src="img/logo.png" height="30px"></div>
@@ -35,7 +35,7 @@
 
     <div class="container">
 
-        <!-- GALLERY -->
+        <!-- ***************************************************** GALLERY PAGE -->
         <div class="gallery">
             <div class="search">
                 <input type="text" placeholder="      Search" />
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <!-- EDITOR PAGE -->
+        <!--***************************************************** EDITOR PAGE -->
         <div class="editor-page hide">
             <div class="left-side">
                 <div class="back-to-gallery">
@@ -109,23 +109,29 @@
                       </form> -->
 
                     <!-- SAVE TO LOCAL -->
-                    <!-- <button onclick="onSaveLocal()">Save to memes</button> -->
+                    <button onclick="onSaveLocal()">Save to memes</button>
 
 
                 </div>
             </div>
         </div>
 
-        <!-- MEMES PAGE -->
+        <!--****************************************************** MEMES PAGE -->
         <div class="memes hide">
-            <p>Memes page</p>
 
-            <div class="memes-gallery"></div>
+            <div class="thumbnails2">
+                <!-- Populated by JS -->
 
+            </div>
+           
 
         </div>
 
-        <!-- ABOUT PAGE -->
+
+
+
+
+        <!--****************************************************** ABOUT PAGE -->
         <div class="about hide">
             <h1>Meme Generator v1.0</h1>
             <p>This meme generator was developed by David Marom as part of the Coding Academy course. 2020.</p>

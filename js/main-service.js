@@ -1,3 +1,5 @@
+var gLocalStore = [];
+
 var gKeywords = {
     'happy': 12,
     'funny puk': 1
@@ -18,7 +20,7 @@ var gMeme = {
             align: 'center',
             color: '#000000',
             colorFill: '#ffffff',
-            font:'Impact',
+            font: 'Impact',
             lineWidth: 4,
             x: 275,
             y: 70
@@ -29,7 +31,7 @@ var gMeme = {
             align: 'center',
             color: '#000000',
             colorFill: '#ffffff',
-            font:'Impact',
+            font: 'Impact',
             lineWidth: 2,
 
             x: 275,
@@ -40,9 +42,15 @@ var gMeme = {
 }
 
 function init() {
-    populateGallery();
 
-    // loadFromLocalhost();
+    if (!localStorage.getItem('memes')) {
+        saveToStorage('memes', gLocalStore);
+
+    } else {
+        gLocalStore = loadFromStorage('memes')
+    }
+    populateGallery();
+    populateMemes();
 
 }
 
@@ -57,10 +65,28 @@ function populateGallery() {
     el.innerHTML = strHTML;
 }
 
+// RENDER MEMES
+function populateMemes() {
+    var strHTML = '';
+    var el = document.querySelector('.thumbnails2');
+
+    for (var i = 0; i < gLocalStore.length; i++) {
+        strHTML += `<img src="" class="thumbnail ttt${i}"/>`;
+    }
+
+    el.innerHTML = strHTML;
+
+    for (var i = 0; i < gLocalStore.length; i++) {
+        document.querySelector(`.ttt${i}`).setAttribute("src", gLocalStore[i]);
+    }
+
+ 
+}
+
+
 function updatePanel() {
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
     document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
 
 }
-

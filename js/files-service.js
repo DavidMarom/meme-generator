@@ -1,37 +1,15 @@
-var gLocalhost;
-
-function uploadImg(elForm, ev) {
-    ev.preventDefault();
-    document.getElementById('imgData').value = gCanvas.toDataURL("image/jpeg");
-
-    // A function to be called if request succeeds
-    function onSuccess(uploadedImgUrl) {
-        uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-        document.querySelector('.share-container').innerHTML = `
-        <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-           Share   
-        </a>`
-    }
-    doUploadImg(elForm, onSuccess);
-}
-
-function downloadImg(elLink) {
+function downloadImg(elLink) { // in use with yellow download btn
     var imgContent = gCanvas.toDataURL('');
     elLink.href = imgContent
 }
 
-// function saveToLocalhost() {
-//     canvasEl = document.getElementById('myCanvas');
-//     gLocalhost = canvasEl.toDataURL();
-//     localStorage.setItem('memes', gLocalhost);
-// }
+function saveToLocalStorage() {
+   
+    gLocalStore.push(document.getElementById('myCanvas').toDataURL('image/jpeg'));
+    console.log(gLocalStore.length);
+    saveToStorage('memes',gLocalStore);
 
-// function loadFromLocalhost() {
-//     var dataURL = localStorage.getItem('memes');
-//     var img = new Image;
-//     img.src = dataURL;
-//     document.querySelector('.memes-gallery').innerHTML = toDataURL(img);
-// }
+}
 
 function uploadImg(elForm, ev) {
     ev.preventDefault();
@@ -52,14 +30,25 @@ function uploadImg(elForm, ev) {
 function doUploadImg(elForm, onSuccess) {
     var formData = new FormData(elForm);
     fetch('http://ca-upload.com/here/upload.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(function (res) {
-        return res.text()
-    })
-    .then(onSuccess)
-    .catch(function (err) {
-        console.error(err)
-    })
+            method: 'POST',
+            body: formData
+        })
+        .then(function (res) {
+            return res.text()
+        })
+        .then(onSuccess)
+        .catch(function (err) {
+            console.error(err)
+        })
+}
+
+function saveToStorage(key, val) {
+    var str = JSON.stringify(val);
+    localStorage.setItem(key, str)
+}
+
+function loadFromStorage(key) {
+    var str = localStorage.getItem(key);
+    var val = JSON.parse(str)
+    return val;
 }

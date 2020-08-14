@@ -1,0 +1,21 @@
+.memes {
+    max-width: auto;
+    max-height: auto;
+    padding: 20px
+}
+
+.thumbnails2 img {
+    /* border-radius: 50px; */
+    max-width: 200px;
+    max-height: 200px;
+    padding: 20px;
+}
+
+.thumbnails2 {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 220px;
+    grid-auto-flow: dense;
+}
+

@@ -54,5 +54,7 @@ function onAlignClicked(side) {
 }
 
 function onSaveLocal() {
-    saveToLocalhost();
+    saveToLocalStorage();
+    populateMemes();
+
 }
