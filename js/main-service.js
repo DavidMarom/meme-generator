@@ -6,10 +6,50 @@ var gKeywords = {
 }
 
 var gImgs = [{
-    id: 1,
-    url: '',
-    keywords: ['happy']
-}];
+        keywords: ['trump', 'president','man','pres','t']
+    },
+    {
+        keywords: ['dogs', 'love','dog','animals','d']
+    },
+    {
+        keywords: ['kid', 'kids', 'baby', 'babies', 'love','b','d','dog','dogs']
+    },
+    {
+        keywords: ['cat', 'cats', 'cute','animals','c']
+    },
+    {
+        keywords: ['kids','k']
+    },
+    {
+        keywords: ['funny','man']
+    },
+    {
+        keywords: ['kids', 'shocked']
+    }, {
+        keywords: ['tell me','tell','movie','man','m','mov']
+    }, {
+        keywords: ['kids', 'kid', 'funny','k']
+    }, {
+        keywords: ['obama','president','man','pres']
+    }, {
+        keywords: ['sport','man']
+    }, {
+        keywords: ['israel', 'hebrew','man']
+    }, {
+        keywords: ['actors', 'actor', 'leonardo', 'movie','man','m','mov']
+    }, {
+        keywords: ['actors','actor', 'movie','man','m','mov']
+    }, {
+        keywords: ['actor', 'actors','man']
+    }, {
+        keywords: ['actor','actors','man']
+    }, {
+        keywords: ['president', 'putin','man','pres']
+    }, {
+        keywords: ['animation','movie','ani','man','m','mov']
+    }
+
+];
 
 var gMeme = {
     selectedImgId: 1,
@@ -67,10 +107,24 @@ function populateGallery() {
     var strHTML = '';
     var el = document.querySelector('.thumbnails');
 
-    for (var i = 1; i < 18; i++) {
-        strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
+    var srchEl = document.getElementById('srch').value;
+
+    for (var i = 1; i < 19; i++) {
+
+        if (srchEl == '') {
+            strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
+        } else {
+            if (gImgs[i - 1].keywords.includes(srchEl)) {
+                strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
+            }
+        }
     }
+
+
     el.innerHTML = strHTML;
+
+
+
 }
 
 // RENDER MEMES
@@ -81,7 +135,7 @@ function populateMemes() {
 
     for (var i = 0; i < gLocalStore.length; i++) {
         strHTML += `<div class="father">
-                        <img src="" class="thumbnail2 ttt${i}"/>
+                        <img src="" class="thumbnail2 ttt${i}" />
                         <div class="son trash-btn"><i class="fas fa-2x fa-trash-alt" width="30px" onclick="onDeleteMemeClicked(${i})"></i></div>
                     </div>`;
     }

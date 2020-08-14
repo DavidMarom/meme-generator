@@ -64,3 +64,8 @@ function onDeleteMemeClicked(number) {
     saveToStorage('memes',gLocalStore);
     populateMemes();
 }
+
+function onSearchType(value){
+    // console.log('aaa');
+    populateGallery();
+}
