@@ -35,13 +35,6 @@ function drawText(lineNum, x, y) {
     gCtx.strokeText(gMeme.lines[lineNum].txt, x, y);
 }
 
-// function resizeCanvas() {
-//     const elContainer = document.querySelector('.canvas-container');
-//     // Note: changing the canvas dimension this way clears the canvas
-//     gCanvas.width = elContainer.offsetWidth;
-//     gCanvas.height = elContainer.offsetHeight;
-// }
-
 function canvasDown(ev) {
     gMouse = 'down';
 
@@ -76,16 +69,6 @@ function canvasMove(ev) {
         renderCanvas();
     }
 }
-
-
-// function getImageX() {
-//     var img = new Image;
-
-//     img.onload = function () {
-//         gX = img.naturalWidth;
-//     }
-//     img.src = `content/${gMeme.selectedImgId}.jpg`;
-// }
 
 function myResizeCanvas() {
     var img2 = new Image;

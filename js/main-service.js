@@ -6,98 +6,75 @@ var gKeywords = {
 }
 
 var gImgs = [{
-        keywords: ['trump', 'president', 'man', 'pres', 't']
-    },
-    {
-        keywords: ['dogs', 'love', 'dog', 'animals', 'd']
-    },
-    {
-        keywords: [ 'd', 'dog', 'dogs']
-    },
-    {
-        keywords: ['cat', 'cats', 'cute', 'animals', 'c']
-    },
-    {
-        keywords: ['kids', 'k']
-    },
-    {
-        keywords: ['funny', 'man']
-    },
-    {
-        keywords: ['kids', 'shocked']
-    }, {
-        keywords: ['tell me', 'tell', 'movie', 'man', 'm', 'mov']
-    }, {
-        keywords: ['kids', 'kid', 'funny', 'k']
-    }, {
-        keywords: ['obama', 'president', 'man', 'pres']
-    }, {
-        keywords: ['sport', 'man']
-    }, {
-        keywords: ['israel', 'hebrew', 'man']
-    }, {
-        keywords: ['actors', 'actor', 'leonardo', 'movie', 'man', 'm', 'mov']
-    }, {
-        keywords: ['actors', 'actor', 'movie', 'man', 'm', 'mov']
-    }, {
-        keywords: ['actor', 'actors', 'man']
-    }, {
-        keywords: ['actor', 'actors', 'man']
-    }, {
-        keywords: ['president', 'putin', 'man', 'pres']
-    }, {
-        keywords: ['animation', 'movie', 'ani', 'man', 'm', 'mov']
-    },
-    {
-        keywords: ['kid', 'kids', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
-    },
-    {
-        keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
-    }
-    ,
-    {
-        keywords: ['why', 'man','m', 'w']
-    }
-    ,
-    {
-        keywords: ['kid', 'kids', 'revenge', 'd']
-    }
-    ,
-    {
-        keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
-    }
-    ,
-    {
-        keywords: ['kid', 'kids', 'africa','dance']
-    }
-    ,
-    {
-        keywords: ['trump', 'president', 'p','pr','pres', 'fuck', 't', 'man', 'd']
-    }
-    ,
-    {
-        keywords: ['woman', 'oprah', 'tv', 'crazy']
-    }
-    
-
-];
+    keywords: ['trump', 'president', 'man', 'pres', 't']
+}, {
+    keywords: ['dogs', 'love', 'dog', 'animals', 'd']
+}, {
+    keywords: ['d', 'dog', 'dogs']
+}, {
+    keywords: ['cat', 'cats', 'cute', 'animals', 'c']
+}, {
+    keywords: ['kids', 'k']
+}, {
+    keywords: ['funny', 'man']
+}, {
+    keywords: ['kids', 'shocked']
+}, {
+    keywords: ['tell me', 'tell', 'movie', 'man', 'm', 'mov']
+}, {
+    keywords: ['kids', 'kid', 'funny', 'k']
+}, {
+    keywords: ['obama', 'president', 'man', 'pres']
+}, {
+    keywords: ['sport', 'man']
+}, {
+    keywords: ['israel', 'hebrew', 'man']
+}, {
+    keywords: ['actors', 'actor', 'leonardo', 'movie', 'man', 'm', 'mov']
+}, {
+    keywords: ['actors', 'actor', 'movie', 'man', 'm', 'mov']
+}, {
+    keywords: ['actor', 'actors', 'man']
+}, {
+    keywords: ['actor', 'actors', 'man']
+}, {
+    keywords: ['president', 'putin', 'man', 'pres']
+}, {
+    keywords: ['animation', 'movie', 'ani', 'man', 'm', 'mov']
+}, {
+    keywords: ['kid', 'kids', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+}, {
+    keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
+}, {
+    keywords: ['why', 'man', 'm', 'w']
+}, {
+    keywords: ['kid', 'kids', 'revenge', 'd']
+}, {
+    keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+}, {
+    keywords: ['kid', 'kids', 'africa', 'dance']
+}, {
+    keywords: ['trump', 'president', 'p', 'pr', 'pres', 'fuck', 't', 'man', 'd']
+}, {
+    keywords: ['woman', 'oprah', 'tv', 'crazy']
+}];
 
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
-            txt: 'Top text',
+            txt: 'Edit title',
             size: 80,
             align: 'center',
             color: '#000000',
             colorFill: '#ffffff',
             font: 'Impact',
-            lineWidth: 4,
+            lineWidth: 3,
             x: 275,
-            y: 70
+            y: 100
         },
         {
-            txt: 'Bottom text',
+            txt: '👆 Drag the text around',
             size: 40,
             align: 'center',
             color: '#000000',
@@ -169,4 +146,3 @@ function updatePanel() {
     document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
 }
-

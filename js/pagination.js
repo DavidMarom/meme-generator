@@ -34,9 +34,4 @@ function hideAll() {
     document.querySelector('.editor-page').classList.add('hide');
     document.querySelector('.about').classList.add('hide');
 
-    // document.querySelector('.canvas').classList.add('hide');
-
-
-
-
 }

@@ -69,8 +69,6 @@ h2 {
     grid-column: auto / span 1;
 }
 
-
-
 .editor-page {
     max-width: auto;
     max-height: auto;
@@ -105,27 +103,33 @@ h2 {
     border: 1px solid #000;
 }
 
-
 .about {
     background: rgb(222, 218, 236);
     height: 400px;
     width: auto;
 }
 
-.back-to-gallery button{
+.back-to-gallery button {
     background-color: #ffffff;
-    padding:30px;
-    border:0;
+    padding: 30px;
+    border: 0;
     font-size: larger;
     color: #727272;
-
 }
 
-.search{
+.search {
     width: 100%;
     border-radius: 15px;
     border: 1px solid #DBDBDB;
     height: 40px;
+}
+
+.share-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 1000px) {

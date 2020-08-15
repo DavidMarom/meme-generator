@@ -31,6 +31,7 @@
     text-align:center ;
     margin: 10px;
     text-decoration: none;
+    font-size: 13px;
 }
 
 .save-btn{
@@ -43,21 +44,37 @@
     margin: 10px;
     text-decoration: none;
     border:0;
+
 }
 
 .fb-btn{
 
     padding:10px;
     border-radius: 5px;
-    background-color: #0c10d1;
+    background-color: #4267b2;
     color: #ffffff;
     max-width: 100px;
     text-align:center ;
     margin: 10px;
     text-decoration: none;
+    border:0;
 
 }
+.fb-btn2{
 
+    padding:10px;
+    border-radius: 0px;
+    background-color: #4267b2;
+    color: #ffffff;
+    width: 7%;
+    text-align:center ;
+    margin-right: 34px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    /* height:9px; */
+
+
+}
 input{
     height: 22px;
     font-size: 17px;

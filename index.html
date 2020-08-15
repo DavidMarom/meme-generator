@@ -78,8 +78,8 @@
                         <!-- COLOR -->
 
                         <!-- FONT SIZE -->
-                        <button class="" id="fontUp" onclick="onFontUp()">+</button>
-                        <button class="" id="fontDown" onclick="onFontDown()">-</button>
+                        <button class="" id="fontUp" onclick="onFontUp()">A+</button>
+                        <button class="" id="fontDown" onclick="onFontDown()">A-</button>
                         <button class="fas fa-align-left" onclick="onAlignClicked('left')"></button>
                         <button class="fas fa-align-center" onclick="onAlignClicked('center')"></button>
                         <button class="fas fa-align-right" onclick="onAlignClicked('right')"></button>
@@ -98,27 +98,19 @@
 
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input type="text" placeholder="← Select a title" id="line-a" onkeyup="onTextChange()" />
+                        <input type="text" placeholder="Edit text here" id="line-a" onkeyup="onTextChange()" />
 
                     </div>
                     <div class="combo-toolbar2">
                         <!-- DOWNLOAD AND SHARE -->
                         <a href="#" class="download-btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
-                        <a href="#" class="fb-btn" onclick="downloadImg(this)" download="my-img.jpg">Share</a>
+                        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                            <button class="fb-btn" type="submit">Publish</button>
+                        </form>
                         <button class="save-btn" onclick="onSaveLocal()">Save to memes</button>
-
                     </div>
-
-                    <!-- <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
-                        <input name="img" id="imgData" type="hidden" />
-                        <button class="fb-btn" type="submit">Publish</button>
-                        
-                        <div class="share-container"></div>
-                      </form> -->
-
+                    <div class="share-container"></div>
                     <!-- SAVE TO LOCAL -->
-
-
                 </div>
             </div>
         </div>
@@ -134,9 +126,6 @@
 
 
         </div>
-
-
-
 
 
         <!--****************************************************** ABOUT PAGE -->
