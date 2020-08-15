@@ -50,7 +50,35 @@ var gImgs = [{
     },
     {
         keywords: ['kid', 'kids', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+    },
+    {
+        keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
     }
+    ,
+    {
+        keywords: ['why', 'man','m', 'w']
+    }
+    ,
+    {
+        keywords: ['kid', 'kids', 'revenge', 'd']
+    }
+    ,
+    {
+        keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+    }
+    ,
+    {
+        keywords: ['kid', 'kids', 'africa','dance']
+    }
+    ,
+    {
+        keywords: ['trump', 'president', 'p','pr','pres', 'fuck', 't', 'man', 'd']
+    }
+    ,
+    {
+        keywords: ['woman', 'oprah', 'tv', 'crazy']
+    }
+    
 
 ];
 
