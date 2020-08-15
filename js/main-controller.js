@@ -6,9 +6,12 @@ function onMenuClicked(page) {
 }
 
 function onThClicked(image) {
+    
     gMeme.selectedImgId = image;
     gMeme.selectedLineIdx = 0;
+    myResizeCanvas();
     openEditor();
+    renderCanvas();
 }
 
 function onTextChange(lineNum) {

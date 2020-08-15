@@ -51,9 +51,15 @@
                 <div class="back-to-gallery">
                     <button onclick="onMenuClicked('gallery')">← Back to gallery</button>
                 </div>
-                <canvas id="myCanvas" class="canvas" height="550" width="550" onmousedown="canvasDown(event)"
-                    onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
+
+
+                <!-- <div class="canvas-container2"> -->
+                    <canvas id="myCanvas" class="canvas canvas-container" onmousedown="canvasDown(event)"
+                        onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
+                    <!--************************************************************************************************** CANVAS -->
+                <!-- </div> -->
             </div>
+
 
             <div class="editor-area">
                 <h2>Edit Text Lines</h2>
@@ -119,13 +125,13 @@
 
         <!--****************************************************** MEMES PAGE -->
         <div class="memes hide">
-            
+
             <div class="thumbnails2">
                 <!-- Populated by JS -->
                 <h1>You dont have any memes yet!</h1>
-                <h2>Your saved memes will appear here</h2>    
+                <h2>Your saved memes will appear here</h2>
             </div>
-           
+
 
         </div>
 
