@@ -50,7 +50,7 @@ var gImgs = [{
 }, {
     keywords: ['kid', 'kids', 'revenge', 'd']
 }, {
-    keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+    keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd']
 }, {
     keywords: ['kid', 'kids', 'africa', 'dance']
 }, {
