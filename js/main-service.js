@@ -129,10 +129,26 @@ function populateGallery() {
 function populateMemes() {
     var strHTML = '';
     var el = document.querySelector('.thumbnails2');
+    if (!loadFromStorage('memes') || loadFromStorage('memes') == '') {
+        strHTML += `
+        <div class="no-memes-message">
+            <h1>You dont have any memes yet!</h1>
+            <h2>Your saved memes will appear here</h2>
+
+            <div class="save-btn2" onclick="onMenuClicked('gallery')">
+                Create a meme now !
+            
+            </div>
+
+        </div>`
+        el.innerHTML = strHTML;
+    }
+
+
     for (var i = 0; i < gLocalStore.length; i++) {
         strHTML += `<div class="father">
-                        <img src="" class="thumbnail2 ttt${i}" />
-                        <div class="son trash-btn"><i class="fas fa-2x fa-trash-alt" width="30px" onclick="onDeleteMemeClicked(${i})"></i></div>
+                        <img src="" class="thumbnail2 ttt${i}" onclick="onMemeClicked(${i})" />
+                        <div class="son trash-btn" ><i class="fas fa-2x fa-trash-alt" width="30px" onclick="onDeleteMemeClicked(${i})"></i></div>
                     </div>`;
     }
     el.innerHTML = strHTML;
@@ -145,4 +161,10 @@ function updatePanel() {
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
     document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
+}
+
+function populateMemeModal(i){
+
+    document.querySelector('.meme-present').setAttribute('src', gLocalStore[i]);
+
 }

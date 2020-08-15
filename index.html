@@ -117,13 +117,16 @@
 
         <!--****************************************************** MEMES PAGE -->
         <div class="memes hide">
-
             <div class="thumbnails2">
                 <!-- Populated by JS -->
-                <h1>You dont have any memes yet!</h1>
-                <h2>Your saved memes will appear here</h2>
             </div>
+        </div>
 
+
+        <!--****************************************************** MEMES MODAL -->
+        <div class="meme-modal hide">
+            <div class="close-modal" onclick="closeModal()">Close</div>
+            <img class="meme-present" src="" />
 
         </div>
 
@@ -135,10 +138,8 @@
             <p></p>
             <h2>Features:</h2>
             <ul>
-                <li>Multi-size support
-                </li>
-                <li>Search option
-                </li>
+                <li>Multi-size support</li>
+                <li>Search option</li>
                 <li>Drag elements</li>
                 <li>Save to file</li>
                 <li>Save to local memes gallery</li>
@@ -147,8 +148,7 @@
             </ul>
         </div>
     </div>
-    <script src="js/main-service.js">
-    </script>
+    <script src="js/main-service.js"></script>
     <script src="js/main-controller.js"></script>
     <script src="js/canvas-utils.js"></script>
     <script src="js/pagination.js"></script>

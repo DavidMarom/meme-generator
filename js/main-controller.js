@@ -72,3 +72,10 @@ function onSearchType(value){
     // console.log('aaa');
     populateGallery();
 }
+
+function onMemeClicked(memeNember){
+
+    console.log(memeNember);
+    document.querySelector('.meme-modal').classList.remove('hide');
+    populateMemeModal(memeNember); 
+}

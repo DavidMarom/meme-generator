@@ -33,6 +33,20 @@ h2 {
     color: #727272;
 }
 
+.no-memes-message h1 {
+    display: block;
+}
+
+.no-memes-message h2 {
+    display: block;
+
+}
+
+.no-memes-message{
+
+}
+
+
 .buttons {
     cursor: pointer;
 }
@@ -144,3 +158,21 @@ h2 {
         justify-content: space-between;
     }
 }
+
+
+.meme-modal{
+    position: fixed;
+    top: 70px;
+    left:100px;
+    
+
+    /* margin-right: auto;
+    margin-left:auto; */
+    z-index: 2;
+    background-color:#000000CC;
+    height: 700px;
+    width: 1000px;
+    padding:40px;
+    border-radius: 20px;
+}
+

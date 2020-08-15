@@ -33,5 +33,12 @@ function hideAll() {
     document.querySelector('.memes').classList.add('hide');
     document.querySelector('.editor-page').classList.add('hide');
     document.querySelector('.about').classList.add('hide');
+    document.querySelector('.meme-modal').classList.add('hide');
 
+}
+
+function closeModal() {
+    document.querySelector('.meme-modal').classList.add('hide');
+
+    
 }
