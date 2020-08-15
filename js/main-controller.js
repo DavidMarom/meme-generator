@@ -79,3 +79,20 @@ function onMemeClicked(memeNember){
     document.querySelector('.meme-modal').classList.remove('hide');
     populateMemeModal(memeNember); 
 }
+
+function addSticker(str){
+
+var obj={
+    txt: str,
+    size: 80,
+    align: 'center',
+    color: '#ffffff00',
+    colorFill: '#000000',
+    font: 'Arial',
+    lineWidth: 1,
+    x: 275,
+    y: 200
+}
+gMeme.lines.push(obj);
+renderCanvas();
+}

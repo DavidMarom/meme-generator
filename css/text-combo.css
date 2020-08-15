@@ -21,7 +21,23 @@
 
     padding: 15px;
     border-bottom: 1px solid #DBDBDB;
+
 }
+
+.sticket-toolbar {
+    /* height: 70px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 50px;
+    padding: 15px;
+    border-bottom: 1px solid #DBDBDB;
+    cursor: pointer;
+}
+
 
 .combo-toolbar2 {
     /* height: 70px; */

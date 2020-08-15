@@ -7,10 +7,9 @@ var gY = 10;
 
 function renderCanvas() {
     drawImg(gMeme.selectedImgId);
-
-    drawText(0, gMeme.lines[0].x, gMeme.lines[0].y);
-    drawText(1, gMeme.lines[1].x, gMeme.lines[1].y);
-
+    for (var i = 0; i < gMeme.lines.length; i++) {
+        drawText(i, gMeme.lines[i].x, gMeme.lines[i].y);
+    }
 }
 
 function drawImg(imgToLoad) {
@@ -42,11 +41,25 @@ function canvasDown(ev) {
         offsetX,
         offsetY
     } = ev;
-    if ((Math.abs(offsetY - gMeme.lines[0].y)) + (Math.abs(offsetX - gMeme.lines[0].y)) < (Math.abs(offsetY - gMeme.lines[1].y)) + (Math.abs(offsetX - gMeme.lines[1].y))) {
-        gMeme.selectedLineIdx = 0;
-    } else {
-        gMeme.selectedLineIdx = 1;
+
+    var min = 9999;
+    var curDistance;
+    for (var i = 0; i < gMeme.lines.length; i++) {
+
+        curDistance = (Math.abs(offsetY - gMeme.lines[i].y)) + (Math.abs(offsetX - gMeme.lines[i].y));
+        if (curDistance < min) {
+            min = curDistance;
+            gMeme.selectedLineIdx = i;
+        }
+
     }
+
+
+    // if ((Math.abs(offsetY - gMeme.lines[0].y)) + (Math.abs(offsetX - gMeme.lines[0].y)) < (Math.abs(offsetY - gMeme.lines[1].y)) + (Math.abs(offsetX - gMeme.lines[1].y))) {
+    //     gMeme.selectedLineIdx = 0;
+    // } else {
+    //     gMeme.selectedLineIdx = 1;
+    // }
 
     updatePanel();
 }
@@ -78,22 +91,22 @@ function myResizeCanvas() {
         gX = img2.naturalWidth;
         gY = img2.naturalHeight;
 
-        
+
         const gCanvas = document.querySelector('.canvas-container');
 
         gCanvas.setAttribute("width", img2.naturalWidth);
         gCanvas.setAttribute("height", img2.naturalHeight);
-        
-        
-        gMeme.lines[0].x=img2.naturalWidth/2;
-                
-        gMeme.lines[1].x=img2.naturalWidth/2;
-        gMeme.lines[1].y=img2.naturalHeight-50;
 
 
-        
+        gMeme.lines[0].x = img2.naturalWidth / 2;
 
-        
+        gMeme.lines[1].x = img2.naturalWidth / 2;
+        gMeme.lines[1].y = img2.naturalHeight - 50;
+
+
+
+
+
         renderCanvas();
     }
     img2.src = `content/${gMeme.selectedImgId}.jpg`;
