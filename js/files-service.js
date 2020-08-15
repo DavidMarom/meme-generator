@@ -25,7 +25,7 @@ function uploadImg(elForm, ev) {
 
 function doUploadImg(elForm, onSuccess) {
     var formData = new FormData(elForm);
-    fetch('http://ca-upload.com/here/upload.php', {
+    fetch('www.ca-upload.com/here/upload.php', {
             method: 'POST',
             body: formData
         })
