@@ -22,6 +22,7 @@ body {
 
 p {
     margin: 0;
+    padding: 0;
 }
 
 h2 {
@@ -39,13 +40,9 @@ h2 {
 
 .no-memes-message h2 {
     display: block;
-
 }
 
-.no-memes-message{
-
-}
-
+.no-memes-message {}
 
 .buttons {
     cursor: pointer;
@@ -132,10 +129,37 @@ h2 {
 }
 
 .search {
-    width: 100%;
-    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gallery input {
+    height: 22px;
+    font-size: 17px;
     border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    width: 30%;
+    height: 50px;
+}
+
+.cloud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    /* padding-top: 12px; */
+    /* padding-bottom: 0px; */
+    padding-left: 10px;
+    background-color: #ffffff;
+    height: 22px;
+    font-size: 17px;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    width: 65%;
     height: 40px;
+    cursor: pointer;
 }
 
 .share-container {
@@ -159,20 +183,16 @@ h2 {
     }
 }
 
-
-.meme-modal{
+.meme-modal {
     position: fixed;
     top: 70px;
-    left:100px;
-    
-
+    left: 100px;
     /* margin-right: auto;
     margin-left:auto; */
     z-index: 2;
-    background-color:#000000CC;
+    background-color: #000000CC;
     height: 700px;
     width: 1000px;
-    padding:40px;
+    padding: 40px;
     border-radius: 20px;
 }
-

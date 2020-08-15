@@ -1,12 +1,17 @@
 var gLocalStore = [];
 
 var gKeywords = {
-    'happy': 12,
-    'funny puk': 1
+    'fuck': 3,
+    'president': 1,
+    'woman': 1,
+    'man': 1,
+    'kid': 1,
+    'dog': 1
+
 }
 
 var gImgs = [{
-    keywords: ['trump', 'president', 'man', 'pres', 't']
+    keywords: ['trump', 'president', 'man', 'pres', 't', 'fuck']
 }, {
     keywords: ['dogs', 'love', 'dog', 'animals', 'd']
 }, {
@@ -103,6 +108,7 @@ function init() {
     }
     populateGallery();
     populateMemes();
+    renderCloud();
 }
 
 // RENDER GALLERY
@@ -163,8 +169,28 @@ function updatePanel() {
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
 }
 
-function populateMemeModal(i){
+function populateMemeModal(i) {
 
     document.querySelector('.meme-present').setAttribute('src', gLocalStore[i]);
+
+}
+
+function renderCloud() {
+    strHTML = '';
+
+    Object.keys(gKeywords).forEach((key, index) => {
+        strHTML += `<p style="font-size:${(gKeywords[key]*1)+10}px;" onclick="setWordSearchCound('${key}')">${key}</p>`;
+    })
+
+    document.querySelector('.cloud').innerHTML = strHTML;
+
+}
+
+function setWordSearchCound(key) {
+    gKeywords[key]++;
+    console.log(gKeywords[key]);
+    document.getElementById('srch').value = key;
+    renderCloud();
+    populateGallery();
 
 }
