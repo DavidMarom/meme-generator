@@ -71,7 +71,7 @@ function canvasMove(ev) {
     }
 }
 
-function ResizeCanvas() {
+function resizeCanvas() {
     var img2 = new Image;
 
     img2.onload = function () {

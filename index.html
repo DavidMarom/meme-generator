@@ -69,7 +69,7 @@
                 <div class="text-combo">
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input class="title-input" type="text" placeholder="Edit text here" id="line-a"
+                        <input class="title-input" type="text" placeholder="Edit text here ←" id="line-a"
                             onkeyup="onTextChange()" />
 
                     </div>
@@ -78,27 +78,27 @@
                     <div class="combo-toolbar">
                         <div class="aaa">
                             <!-- FONT -->
-                            <input list="font-list" placeholder="Font" name="font-select" id="font-select" type="select"
-                                onchange="onFontChange(this.value)">
-                            <!-- <select name="cars" id="cars">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
-                              </select> -->
+                            <!-- <input list="font-list" placeholder="Font" type="select" > -->
 
-                            <datalist id="font-list">
+                            <select name="font-select" id="font-select" onchange="onFontChange(this.value)">
+
+                                <option value="Impact">Impact</option>
+                                <option value="Arial">Arial</option>
+                                
+                              </select>
+
+                            <!-- <datalist id="font-list">
                                 <option value="Impact">
                                 <option value="Arial">
-                            </datalist>
+                            </datalist> -->
                         </div>
                         <div class="bbb">
                             <!-- FONT SIZE -->
-                            <button class="" id="fontUp" onclick="onFontUp()">A+</button>
-                            <button class="" id="fontDown" onclick="onFontDown()">A-</button>
-                            <button class="fas fa-align-left" onclick="onAlignClicked('left')"></button>
-                            <button class="fas fa-align-center" onclick="onAlignClicked('center')"></button>
-                            <button class="fas fa-align-right" onclick="onAlignClicked('right')"></button>
+                            <button class="text-btn" id="fontUp" onclick="onFontUp()">A+</button>
+                            <button class="text-btn" id="fontDown" onclick="onFontDown()">A-</button>
+                            <button class="text-btn fas fa-align-left" onclick="onAlignClicked('left')"></button>
+                            <button class="text-btn fas fa-align-center" onclick="onAlignClicked('center')"></button>
+                            <button class="text-btn fas fa-align-right" onclick="onAlignClicked('right')"></button>
                         </div>
                     </div>
 
@@ -107,8 +107,8 @@
                         <!-- COLOR -->
                         <input type="color" class="color-picker" value="#000000" onchange="onColorSelect(this.value)" />
 
-                        <button class="" id="fontUp" onclick="onStrokeUp()">+</button>
-                        <button class="" id="fontDown" onclick="onStrokeDown()">-</button>
+                        <button class="text-btn" id="fontUp" onclick="onStrokeUp()">+</button>
+                        <button class="text-btn" id="fontDown" onclick="onStrokeDown()">-</button>
                     </div>
 
                     <div class="sticket-toolbar">

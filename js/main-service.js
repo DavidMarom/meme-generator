@@ -1,7 +1,7 @@
 'use strict';
 
 var gScreenRatio = 1;
-var gUserMemes = []; //gUserMemes
+var gUserMemes = [];
 
 var gKeywords = {
     'fuck': 3,
@@ -16,9 +16,9 @@ var gKeywords = {
 var gImgs = [{
     keywords: ['trump', 'president', 'man', 'pres', 't', 'fuck']
 }, {
-    keywords: ['dogs', 'love', 'dog', 'animals', 'd']
+    keywords: ['dr', 'evil', 'movie', 'powers', 'man']
 }, {
-    keywords: ['d', 'dog', 'dogs']
+    keywords: ['woman', 'oprah', 'tv', 'crazy']
 }, {
     keywords: ['cat', 'cats', 'cute', 'animals', 'c']
 }, {
@@ -50,21 +50,21 @@ var gImgs = [{
 }, {
     keywords: ['animation', 'movie', 'ani', 'man', 'm', 'mov']
 }, {
-    keywords: ['kid', 'kids', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+    keywords: ['dog', 'dogs', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
 }, {
     keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
 }, {
     keywords: ['why', 'man', 'm', 'w']
 }, {
-    keywords: ['kid', 'kids', 'revenge', 'd']
+    keywords: ['kid', 'kids', 'revenge', 'd','beach']
 }, {
-    keywords: ['man', 'evil', 'dr', 'babies', 'love', 'b', 'd']
+    keywords: ['dog','dogs','love','beach']
 }, {
     keywords: ['kid', 'kids', 'africa', 'dance']
 }, {
     keywords: ['trump', 'president', 'p', 'pr', 'pres', 'fuck', 't', 'man', 'd']
 }, {
-    keywords: ['woman', 'oprah', 'tv', 'crazy']
+    keywords: ['dogs', 'love', 'dog', 'animals', 'd']
 }];
 
 var gMeme = {
@@ -114,37 +114,56 @@ function init() {
     renderCloud();
 }
 
+// SETTERS
+
 function setSelectedImgId(id) {
     gMeme.selectedImgId = id;
 }
 
 function setSelectedLineIdx(idx) {
     gMeme.selectedLineIdx = idx;
-
 }
 
-
-function updatePanel() { //controller
-    document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
-    document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
-    document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
+function setActiveElementColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color;
 }
 
-function populateMemeModal(i) { //controller
-
-    document.querySelector('.meme-present').setAttribute('src', gUserMemes[i]);
-
+function setActiveElementFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font;
 }
 
-function detectScreenSize() {
-    var windowWidth = window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
+function changeActiveElementSize(size) {
+    gMeme.lines[gMeme.selectedLineIdx].size += size;
+}
 
-    if (windowWidth < 500) {
-        gScreenRatio = 0.5;
-    }
+function changeActiveElementStroke(size) {
+    gMeme.lines[gMeme.selectedLineIdx].lineWidth += size;
+}
 
+function setActiveElementAlignDirection(side) {
+    gMeme.lines[gMeme.selectedLineIdx].align = side;
+}
+
+// GETTERS
+
+function getActiveCanvasElementIdx() {
+    return (gMeme.selectedLineIdx);
+}
+
+function getActiveCanvasElementColor() {
+    return (gMeme.lines[gMeme.selectedLineIdx].color);
+}
+
+function getActiveCanvasElementValue() {
+    return (gMeme.lines[gMeme.selectedLineIdx].txt);
+}
+
+function getActiveCanvasElementFont() {
+    return (gMeme.lines[gMeme.selectedLineIdx].font);
+}
+
+function setCanvasElementValue(Idx, value) {
+    gMeme.lines[getActiveCanvasElementIdx(Idx)].txt = value;
 }
 
 function addSticker(str) {
@@ -164,6 +183,6 @@ function addSticker(str) {
 
 }
 
-function increaseCloudWordClickCount(keyword){
+function increaseCloudWordClickCount(keyword) {
     gKeywords[keyword]++;
 }

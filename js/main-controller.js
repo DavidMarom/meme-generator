@@ -6,51 +6,51 @@ function onMenuClicked(page) {
     updateMenu(page);
 }
 
-function onThumbnailClicked(id) { //img
+function onThumbnailClicked(id) {
     setSelectedImgId(id);
     setSelectedLineIdx(0);
-    ResizeCanvas();
+    resizeCanvas();
     openEditor();
     renderCanvas();
 }
 
 function onTextChange(lineNum) {
-    gMeme.lines[gMeme.selectedLineIdx].txt = document.getElementById('line-a').value;
+    setCanvasElementValue(lineNum, document.getElementById('line-a').value);
     renderCanvas();
 }
 
 function onColorSelect(scolor) {
-    gMeme.lines[gMeme.selectedLineIdx].color = scolor;
+    setActiveElementColor(scolor);
     renderCanvas();
 }
 
 function onFontChange(fontName) {
-    gMeme.lines[gMeme.selectedLineIdx].font = fontName;
+    setActiveElementFont(fontName);
     renderCanvas();
 }
 
 function onFontUp() {
-    gMeme.lines[gMeme.selectedLineIdx].size += 2;
+    changeActiveElementSize(2);
     renderCanvas();
 }
 
 function onFontDown() {
-    gMeme.lines[gMeme.selectedLineIdx].size -= 2;
+    changeActiveElementSize(-2);
     renderCanvas();
 }
 
 function onStrokeUp() {
-    gMeme.lines[gMeme.selectedLineIdx].lineWidth += 1;
+    changeActiveElementStroke(1);
     renderCanvas();
 }
 
 function onStrokeDown() {
-    gMeme.lines[gMeme.selectedLineIdx].lineWidth -= 1;
+    changeActiveElementStroke(-1);
     renderCanvas();
 }
 
 function onAlignClicked(side) {
-    gMeme.lines[gMeme.selectedLineIdx].align = side;
+    setActiveElementAlignDirection(side);
     renderCanvas();
 }
 
@@ -76,7 +76,7 @@ function onMemeClicked(memeNember) {
 }
 
 // RENDER MEMES
-function populateMemes() { //controller
+function populateMemes() {
     var strHTML = '';
     var el = document.querySelector('.thumbnails2');
     if (!loadFromStorage('memes') || loadFromStorage('memes') == '') {
@@ -138,4 +138,24 @@ function setWordSearchCound(keyword) {
     document.getElementById('srch').value = keyword;
     renderCloud();
     populateGallery();
+}
+
+function updatePanel() {
+    document.getElementById('line-a').value = getActiveCanvasElementValue();
+    document.querySelector('.color-picker').value = getActiveCanvasElementColor();
+    document.getElementById('font-select').value = getActiveCanvasElementFont();
+}
+
+function populateMemeModal(i) {
+    document.querySelector('.meme-present').setAttribute('src', gUserMemes[i]);
+}
+
+function detectScreenSize() {
+    var windowWidth = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+
+    if (windowWidth < 500) {
+        gScreenRatio = 0.5;
+    }
 }
