@@ -5,8 +5,7 @@ function downloadImg(elLink) { // in use with yellow download btn
 
 function saveToLocalStorage() {
     gLocalStore.push(document.getElementById('myCanvas').toDataURL('image/jpeg'));
-    console.log(gLocalStore.length);
-    saveToStorage('memes',gLocalStore);
+    saveToStorage('memes', gLocalStore);
 }
 
 function uploadImg(elForm, ev) {
@@ -48,3 +47,4 @@ function loadFromStorage(key) {
     var val = JSON.parse(str)
     return val;
 }
+

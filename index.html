@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Meme Generator</title>
-    <meta name="description" content="">
+    <meta name="description" content="Meme Generator">
     <link rel="icon" type="image/png" href="favicon.ico" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/bb58fef941.js" crossorigin="anonymous"></script>
 
@@ -22,7 +24,6 @@
         <a href="index.html">
             <div class="logo"><img src="img/logo.png" height="30px"></div>
         </a>
-
         <div class="buttons">
             <ul class="clean-list">
                 <li onclick="onMenuClicked('memes')" class="memes-button">My Memes</li>
@@ -30,20 +31,20 @@
                 <li onclick="onMenuClicked('about')" class="about-button">About</li>
             </ul>
         </div>
-
     </div>
 
     <div class="container">
 
         <!-- ***************************************************** GALLERY PAGE -->
         <div class="gallery">
+
+
             <div class="search">
-                <input id="srch" type="text" placeholder="🔍 Search" onkeyup="onSearchType(this)" class="search" />
-                <div class="cloud">
+                <div class="input-wrapper">
 
-
-
+                    <input id="srch" type="text" placeholder="🔍" onkeyup="onSearchType(this)" />
                 </div>
+                <div class="cloud"></div>
             </div>
             <div class="thumbnails">
                 <!-- Populated by JS -->
@@ -57,48 +58,48 @@
                     <button onclick="onMenuClicked('gallery')">← Back to gallery</button>
                 </div>
 
-
-                <!-- <div class="canvas-container2"> -->
                 <canvas id="myCanvas" class="canvas canvas-container" onmousedown="canvasDown(event)"
                     onmouseup="canvasUp(event)" onmousemove="canvasMove(event)"> </canvas>
                 <!--************************************************************************************************** CANVAS -->
-                <!-- </div> -->
             </div>
 
-
             <div class="editor-area">
-                <h2>Edit your meme - make it shine!</h2>
+                <h2 class="hide-on-mobile">Edit your meme - make it shine!</h2>
 
                 <div class="text-combo">
                     <div class="combo-toolbar">
-
-                        <!-- FONT -->
-                        <input list="font-list" placeholder="Font" name="font-select" id="font-select"
-                            onchange="onFontChange(this.value)">
-                        <datalist id="font-list">
-                            <option value="Impact">
-                            <option value="Arial">
-                        </datalist>
-
-                        <!-- COLOR -->
-
-                        <!-- FONT SIZE -->
-                        <button class="" id="fontUp" onclick="onFontUp()">A+</button>
-                        <button class="" id="fontDown" onclick="onFontDown()">A-</button>
-                        <button class="fas fa-align-left" onclick="onAlignClicked('left')"></button>
-                        <button class="fas fa-align-center" onclick="onAlignClicked('center')"></button>
-                        <button class="fas fa-align-right" onclick="onAlignClicked('right')"></button>
+                        <div class="aaa">
+                            <!-- FONT -->
+                            <input list="font-list" placeholder="Font" name="font-select" id="font-select" type="select" onchange="onFontChange(this.value)">
+                            <!-- <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select> -->
+                            
+                            <datalist id="font-list">
+                                <option value="Impact">
+                                <option value="Arial">
+                            </datalist>
+                        </div>
+                        <div class="bbb">
+                            <!-- FONT SIZE -->
+                            <button class="" id="fontUp" onclick="onFontUp()">A+</button>
+                            <button class="" id="fontDown" onclick="onFontDown()">A-</button>
+                            <button class="fas fa-align-left" onclick="onAlignClicked('left')"></button>
+                            <button class="fas fa-align-center" onclick="onAlignClicked('center')"></button>
+                            <button class="fas fa-align-right" onclick="onAlignClicked('right')"></button>
+                        </div>
                     </div>
 
-
                     <div class="combo-toolbar">
-
                         <p>Stroke :</p>
+                        <!-- COLOR -->
                         <input type="color" class="color-picker" value="#000000" onchange="onColorSelect(this.value)" />
 
                         <button class="" id="fontUp" onclick="onStrokeUp()">+</button>
                         <button class="" id="fontDown" onclick="onStrokeDown()">-</button>
-
                     </div>
 
                     <div class="sticket-toolbar">
@@ -108,13 +109,12 @@
                         <p onclick="addSticker('👍')">👍</p>
                         <p onclick="addSticker('🤘')">🤘</p>
                         <p onclick="addSticker('🖕')">🖕</p>
-                        
                     </div>
-
 
                     <!-- TEXT EDIT -->
                     <div class="line-edit">
-                        <input type="text" placeholder="Edit text here" id="line-a" onkeyup="onTextChange()" />
+                        <input class="title-input" type="text" placeholder="Edit text here" id="line-a"
+                            onkeyup="onTextChange()" />
 
                     </div>
                     <div class="combo-toolbar2">
@@ -138,14 +138,12 @@
             </div>
         </div>
 
-
         <!--****************************************************** MEMES MODAL -->
         <div class="meme-modal hide">
             <div class="close-modal" onclick="closeModal()">Close</div>
             <img class="meme-present" src="" />
 
         </div>
-
 
         <!--****************************************************** ABOUT PAGE -->
         <div class="about hide">
@@ -159,8 +157,6 @@
                 <li>Drag elements</li>
                 <li>Save to file</li>
                 <li>Save to local memes gallery</li>
-
-
             </ul>
         </div>
     </div>

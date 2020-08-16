@@ -1,17 +1,16 @@
-.hide{
-    display :none;
+.hide {
+    display: none;
     visibility: hidden;
     position: absolute;
     left: -10000px;
-    top: -10000px;}
+    top: -10000px;
+}
 
 .clean-list {
     list-style-type: none;
     margin: 0;
     padding: 20;
-
     min-width: 400px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -21,89 +20,82 @@
     color: #FF9826;
 }
 
-.download-btn{
-    padding:10px;
+.download-btn {
+    padding: 10px;
     border-radius: 5px;
     background-color: #f8af26;
     color: #ffffff;
     max-width: 100px;
-    text-align:center ;
+    text-align: center;
     margin: 10px;
     text-decoration: none;
     font-size: 13px;
 }
 
-.save-btn{
-    padding:10px;
+.save-btn {
+    padding: 10px;
     border-radius: 5px;
     background-color: #09ca13;
     color: #ffffff;
     max-width: 200px;
-    text-align:center ;
+    text-align: center;
     margin: 10px;
     text-decoration: none;
-    border:0;
-
+    border: 0;
 }
 
-.save-btn2{
-    padding:10px;
+.save-btn2 {
+    padding: 10px;
     border-radius: 50px;
     background-color: #09ca13;
     max-width: 400px;
-    text-align:center ;
+    text-align: center;
     margin: auto;
     text-decoration: none;
-    border:0;
+    border: 0;
     color: #ffffff;
     font-size: 30px;
-    margin-top:200px;
+    margin-top: 200px;
     cursor: pointer;
 }
 
-.fb-btn{
-    padding:10px;
+.fb-btn {
+    padding: 10px;
     border-radius: 5px;
     background-color: #4267b2;
     color: #ffffff;
     max-width: 100px;
-    text-align:center ;
+    text-align: center;
     margin: 10px;
     text-decoration: none;
-    border:0;
-
+    border: 0;
 }
 
-.fb-btn2{
-    padding:10px;
+.fb-btn2 {
+    padding: 10px;
     border-radius: 0px;
     background-color: #4267b2;
     color: #ffffff;
     width: 7%;
-    text-align:center ;
+    text-align: center;
     margin-right: 34px;
     margin-bottom: 20px;
     text-decoration: none;
-    /* height:9px; */
 }
 
-input{
+input {
     height: 22px;
     font-size: 17px;
 }
 
-.line-edit input{
+.line-edit input {
     font-size: 22px;
 }
 
-.close-modal{
-
-    /* position: relative; */
-    /* top:10px; */
-    /* right:20px; */
+.close-modal {
     font-size: 30px;
-    padding-bottom:20px;
-    padding-right:10px ;
+    padding-bottom: 20px;
+    padding-right: 10px;
     text-align: right;
     color: #ffffff;
     cursor: pointer;

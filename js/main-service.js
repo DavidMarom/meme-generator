@@ -1,12 +1,13 @@
-var gLocalStore = [];
+var gResRatio = 1; //screen
+var gLocalStore = []; //gUserMemes
 
 var gKeywords = {
     'fuck': 3,
     'president': 1,
-    'woman': 1,
+    'woman': 10,
     'man': 1,
     'kid': 1,
-    'dog': 1
+    'dog': 14
 
 }
 
@@ -101,6 +102,7 @@ function loadDump() {
 }
 
 function init() {
+    window.onload = detectScreenSize();
     if (!loadFromStorage('memes') || loadFromStorage('memes') == '') { // if nothing in storage
         loadDump();
     } else {
@@ -112,7 +114,8 @@ function init() {
 }
 
 // RENDER GALLERY
-function populateGallery() {
+function populateGallery() { //should be in the controller
+    // var imgs = getImgs()
     var strHTML = '';
     var el = document.querySelector('.thumbnails');
 
@@ -132,7 +135,7 @@ function populateGallery() {
 }
 
 // RENDER MEMES
-function populateMemes() {
+function populateMemes() { //controller
     var strHTML = '';
     var el = document.querySelector('.thumbnails2');
     if (!loadFromStorage('memes') || loadFromStorage('memes') == '') {
@@ -163,19 +166,19 @@ function populateMemes() {
     }
 }
 
-function updatePanel() {
+function updatePanel() { //controller
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
     document.querySelector('.color-picker').value = gMeme.lines[gMeme.selectedLineIdx].color;
     document.getElementById('font-select').value = gMeme.lines[gMeme.selectedLineIdx].font;
 }
 
-function populateMemeModal(i) {
+function populateMemeModal(i) { //controller
 
     document.querySelector('.meme-present').setAttribute('src', gLocalStore[i]);
 
 }
 
-function renderCloud() {
+function renderCloud() { //controller
     strHTML = '';
 
     Object.keys(gKeywords).forEach((key, index) => {
@@ -186,11 +189,39 @@ function renderCloud() {
 
 }
 
-function setWordSearchCound(key) {
-    gKeywords[key]++;
+function setWordSearchCound(key) { //controller
+    gKeywords[key]++; // updateKeywordCount(keyword)
     console.log(gKeywords[key]);
     document.getElementById('srch').value = key;
     renderCloud();
     populateGallery();
 
+}
+
+function detectScreenSize() {
+    var windowWidth = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+
+    if(windowWidth<500){
+        gResRatio=0.5;
+    }
+
+}
+
+function addSticker(str) {
+    var obj = {
+        txt: str,
+        size: 80 * gResRatio,
+        align: 'center',
+        color: '#ffffff00',
+        colorFill: '#000000',
+        font: 'Arial',
+        lineWidth: 1,
+        x: 275,
+        y: 200
+    }
+    gMeme.lines.push(obj);
+    renderCanvas(); //controller
+    
 }

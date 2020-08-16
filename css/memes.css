@@ -5,7 +5,6 @@
 }
 
 .thumbnails2 img {
-    /* border-radius: 50px; */
     max-width: 200px;
     max-height: 200px;
     padding: 20px;
@@ -39,10 +38,9 @@
 .trash-btn:hover {
     z-index: 2;
     opacity: 100%;
-    color:#ff5040;
+    color: #ff5040;
     transition: all 0.2s;
 }
-
 
 .thumbnail2 {
     border-radius: 30px;

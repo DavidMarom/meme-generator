@@ -5,66 +5,55 @@
     margin: 20px;
     padding: 0px;
     border-radius: 10px;
-    /* height: 42px; */
     border: 1px solid #e7e7e7;
-    width: 100%;
-    background-color: #fff;
+    /* width: 100%; */
+
+    /* max-width: 600px; */
+    background-color: rgb(255, 255, 255);
 }
 
 .combo-toolbar {
-    /* height: 70px; */
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
     padding: 15px;
     border-bottom: 1px solid #DBDBDB;
-
+    /* max-width: 500px; */
 }
 
 .sticket-toolbar {
-    /* height: 70px; */
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
-    font-size: 50px;
+    font-size: 45px;
+    
     padding: 15px;
     border-bottom: 1px solid #DBDBDB;
     cursor: pointer;
 }
 
-
 .combo-toolbar2 {
-    /* height: 70px; */
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
     padding: 15px;
 }
 
-.line-edit{
-    width: 100%;
-  
+.line-edit {
+    /* width: 70%; */
 }
 
 .line-edit input {
-    margin:20px;
-    height: 42px;
+    margin: 20px;
+    /* height: 42px; */
     border: 0px;
-    width: 500px;
-    font-family: Roboto;
+    /* width: 50%; */
 }
 
-.text-btns{
-
+.text-btns {
     border: 0;
     background-color: #ffffff00;
 }

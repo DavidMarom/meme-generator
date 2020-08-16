@@ -5,11 +5,11 @@ function onMenuClicked(page) {
     updateMenu(page);
 }
 
-function onThClicked(image) {
-    
+function onThClicked(image) { //img
     gMeme.selectedImgId = image;
     gMeme.selectedLineIdx = 0;
-    myResizeCanvas();
+    // service: updateMeme(img)
+    myResizeCanvas(); // no "my"
     openEditor();
     renderCanvas();
 }
@@ -21,7 +21,6 @@ function onTextChange(lineNum) {
 
 function onColorSelect(scolor) {
     gMeme.lines[gMeme.selectedLineIdx].color = scolor;
-    // gMeme.lines[lineNumber].color = document.getElementById('line-a').value;
     renderCanvas();
 }
 
@@ -53,46 +52,26 @@ function onStrokeDown() {
 function onAlignClicked(side) {
     gMeme.lines[gMeme.selectedLineIdx].align = side;
     renderCanvas();
-    console.log(side);
 }
 
 function onSaveLocal() {
-    saveToLocalStorage();
+    saveToLocalStorage(); //service
     populateMemes();
     pageTo('memes');
 }
 
 function onDeleteMemeClicked(number) {
     gLocalStore.splice(number, 1);
-    saveToStorage('memes',gLocalStore);
+    saveToStorage('memes', gLocalStore);
     populateMemes();
 }
 
-function onSearchType(value){
-    // console.log('aaa');
+function onSearchType() {
     populateGallery();
 }
 
-function onMemeClicked(memeNember){
-
-    console.log(memeNember);
+function onMemeClicked(memeNember) {
     document.querySelector('.meme-modal').classList.remove('hide');
-    populateMemeModal(memeNember); 
+    populateMemeModal(memeNember);
 }
 
-function addSticker(str){
-
-var obj={
-    txt: str,
-    size: 80,
-    align: 'center',
-    color: '#ffffff00',
-    colorFill: '#000000',
-    font: 'Arial',
-    lineWidth: 1,
-    x: 275,
-    y: 200
-}
-gMeme.lines.push(obj);
-renderCanvas();
-}
