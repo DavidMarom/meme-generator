@@ -7,6 +7,15 @@ body {
     background-color: #f8f8f8;
 }
 
+.disable-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+}
+
 .header {
     background-color: #fff;
     min-height: 50px;
@@ -127,7 +136,6 @@ h2 {
 
 .about {
     background: rgb(222, 218, 236);
-    height: 400px;
     width: auto;
     padding: 20px;
 }
@@ -285,6 +293,7 @@ h2 {
     .combo-toolbar input {
         background-color: rgb(255, 255, 255);
         display: block;
+        border:1px solid #DBDBDB;
     }
     .combo-toolbar {
         display: flex;

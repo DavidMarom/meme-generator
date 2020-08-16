@@ -1,5 +1,7 @@
-var gResRatio = 1; //screen
-var gLocalStore = []; //gUserMemes
+'use strict';
+
+var gScreenRatio = 1;
+var gUserMemes = []; //gUserMemes
 
 var gKeywords = {
     'fuck': 3,
@@ -96,9 +98,8 @@ var gMeme = {
 }
 
 function loadDump() {
-    gLocalStore = [];
-    saveToStorage('memes', gLocalStore);
-    // populateMemes();
+    gUserMemes = [];
+    saveToStorage('memes', gUserMemes);
 }
 
 function init() {
@@ -106,65 +107,22 @@ function init() {
     if (!loadFromStorage('memes') || loadFromStorage('memes') == '') { // if nothing in storage
         loadDump();
     } else {
-        gLocalStore = loadFromStorage('memes');
+        gUserMemes = loadFromStorage('memes');
     }
     populateGallery();
     populateMemes();
     renderCloud();
 }
 
-// RENDER GALLERY
-function populateGallery() { //should be in the controller
-    // var imgs = getImgs()
-    var strHTML = '';
-    var el = document.querySelector('.thumbnails');
-
-    var srchEl = document.getElementById('srch').value;
-
-    for (var i = 1; i < 27; i++) {
-
-        if (srchEl == '') {
-            strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
-        } else {
-            if (gImgs[i - 1].keywords.includes(srchEl)) {
-                strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThClicked(${i})" />`;
-            }
-        }
-    }
-    el.innerHTML = strHTML;
+function setSelectedImgId(id) {
+    gMeme.selectedImgId = id;
 }
 
-// RENDER MEMES
-function populateMemes() { //controller
-    var strHTML = '';
-    var el = document.querySelector('.thumbnails2');
-    if (!loadFromStorage('memes') || loadFromStorage('memes') == '') {
-        strHTML += `
-        <div class="no-memes-message">
-            <h1>You dont have any memes yet!</h1>
-            <h2>Your saved memes will appear here</h2>
+function setSelectedLineIdx(idx) {
+    gMeme.selectedLineIdx = idx;
 
-            <div class="save-btn2" onclick="onMenuClicked('gallery')">
-                Create a meme now !
-            
-            </div>
-
-        </div>`
-        el.innerHTML = strHTML;
-    }
-
-
-    for (var i = 0; i < gLocalStore.length; i++) {
-        strHTML += `<div class="father">
-                        <img src="" class="thumbnail2 ttt${i}" onclick="onMemeClicked(${i})" />
-                        <div class="son trash-btn" ><i class="fas fa-2x fa-trash-alt" width="30px" onclick="onDeleteMemeClicked(${i})"></i></div>
-                    </div>`;
-    }
-    el.innerHTML = strHTML;
-    for (var i = 0; i < gLocalStore.length; i++) {
-        document.querySelector(`.ttt${i}`).setAttribute("src", gLocalStore[i]);
-    }
 }
+
 
 function updatePanel() { //controller
     document.getElementById('line-a').value = gMeme.lines[gMeme.selectedLineIdx].txt;
@@ -174,27 +132,7 @@ function updatePanel() { //controller
 
 function populateMemeModal(i) { //controller
 
-    document.querySelector('.meme-present').setAttribute('src', gLocalStore[i]);
-
-}
-
-function renderCloud() { //controller
-    strHTML = '';
-
-    Object.keys(gKeywords).forEach((key, index) => {
-        strHTML += `<p style="font-size:${(gKeywords[key]*1)+10}px;" onclick="setWordSearchCound('${key}')">${key}</p>`;
-    })
-
-    document.querySelector('.cloud').innerHTML = strHTML;
-
-}
-
-function setWordSearchCound(key) { //controller
-    gKeywords[key]++; // updateKeywordCount(keyword)
-    console.log(gKeywords[key]);
-    document.getElementById('srch').value = key;
-    renderCloud();
-    populateGallery();
+    document.querySelector('.meme-present').setAttribute('src', gUserMemes[i]);
 
 }
 
@@ -203,8 +141,8 @@ function detectScreenSize() {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
 
-    if(windowWidth<500){
-        gResRatio=0.5;
+    if (windowWidth < 500) {
+        gScreenRatio = 0.5;
     }
 
 }
@@ -212,7 +150,7 @@ function detectScreenSize() {
 function addSticker(str) {
     var obj = {
         txt: str,
-        size: 80 * gResRatio,
+        size: 80 * gScreenRatio,
         align: 'center',
         color: '#ffffff00',
         colorFill: '#000000',
@@ -223,5 +161,9 @@ function addSticker(str) {
     }
     gMeme.lines.push(obj);
     renderCanvas(); //controller
-    
+
+}
+
+function increaseCloudWordClickCount(keyword){
+    gKeywords[keyword]++;
 }

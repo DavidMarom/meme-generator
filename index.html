@@ -44,7 +44,7 @@
 
                     <input id="srch" type="text" placeholder="🔍" onkeyup="onSearchType(this)" />
                 </div>
-                <div class="cloud"></div>
+                <div class="cloud disable-select"></div>
             </div>
             <div class="thumbnails">
                 <!-- Populated by JS -->
@@ -67,17 +67,26 @@
                 <h2 class="hide-on-mobile">Edit your meme - make it shine!</h2>
 
                 <div class="text-combo">
+                    <!-- TEXT EDIT -->
+                    <div class="line-edit">
+                        <input class="title-input" type="text" placeholder="Edit text here" id="line-a"
+                            onkeyup="onTextChange()" />
+
+                    </div>
+
+
                     <div class="combo-toolbar">
                         <div class="aaa">
                             <!-- FONT -->
-                            <input list="font-list" placeholder="Font" name="font-select" id="font-select" type="select" onchange="onFontChange(this.value)">
+                            <input list="font-list" placeholder="Font" name="font-select" id="font-select" type="select"
+                                onchange="onFontChange(this.value)">
                             <!-- <select name="cars" id="cars">
                                 <option value="volvo">Volvo</option>
                                 <option value="saab">Saab</option>
                                 <option value="opel">Opel</option>
                                 <option value="audi">Audi</option>
                               </select> -->
-                            
+
                             <datalist id="font-list">
                                 <option value="Impact">
                                 <option value="Arial">
@@ -111,12 +120,7 @@
                         <p onclick="addSticker('🖕')">🖕</p>
                     </div>
 
-                    <!-- TEXT EDIT -->
-                    <div class="line-edit">
-                        <input class="title-input" type="text" placeholder="Edit text here" id="line-a"
-                            onkeyup="onTextChange()" />
 
-                    </div>
                     <div class="combo-toolbar2">
                         <!-- DOWNLOAD AND SHARE -->
                         <a href="#" class="download-btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>

@@ -3,9 +3,9 @@ function downloadImg(elLink) { // in use with yellow download btn
     elLink.href = imgContent
 }
 
-function saveToLocalStorage() {
-    gLocalStore.push(document.getElementById('myCanvas').toDataURL('image/jpeg'));
-    saveToStorage('memes', gLocalStore);
+function saveMemeToLocalStorage() {
+    gUserMemes.push(document.getElementById('myCanvas').toDataURL('image/jpeg'));
+    saveToStorage('memes', gUserMemes);
 }
 
 function uploadImg(elForm, ev) {

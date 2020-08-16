@@ -44,6 +44,8 @@
 
 .line-edit {
     /* width: 70%; */
+    border-bottom: 1px solid #DBDBDB;
+
 }
 
 .line-edit input {

@@ -19,17 +19,17 @@ function drawImg(imgToLoad) {
 }
 
 function drawText(lineNum, x, y) {
-    gCtx.lineWidth = gMeme.lines[lineNum].lineWidth*gResRatio;
+    gCtx.lineWidth = gMeme.lines[lineNum].lineWidth*gScreenRatio;
     gCtx.strokeStyle = gMeme.lines[lineNum].color;
     gCtx.fillStyle = gMeme.lines[lineNum].colorFill;
 
-    let fontStr = gMeme.lines[lineNum].size*gResRatio + 'px ' + gMeme.lines[lineNum].font;
+    let fontStr = gMeme.lines[lineNum].size*gScreenRatio + 'px ' + gMeme.lines[lineNum].font;
 
     gCtx.font = fontStr;
 
     gCtx.textAlign = gMeme.lines[lineNum].align;
-    gCtx.fillText(gMeme.lines[lineNum].txt, x*gResRatio, y*gResRatio);
-    gCtx.strokeText(gMeme.lines[lineNum].txt, x*gResRatio, y*gResRatio);
+    gCtx.fillText(gMeme.lines[lineNum].txt, x*gScreenRatio, y*gScreenRatio);
+    gCtx.strokeText(gMeme.lines[lineNum].txt, x*gScreenRatio, y*gScreenRatio);
 }
 
 function canvasDown(ev) {
@@ -71,7 +71,7 @@ function canvasMove(ev) {
     }
 }
 
-function myResizeCanvas() {
+function ResizeCanvas() {
     var img2 = new Image;
 
     img2.onload = function () {
@@ -80,8 +80,8 @@ function myResizeCanvas() {
 
         const gCanvas = document.querySelector('.canvas-container');
 
-        gCanvas.setAttribute("width", img2.naturalWidth * gResRatio);
-        gCanvas.setAttribute("height", img2.naturalHeight * gResRatio);
+        gCanvas.setAttribute("width", img2.naturalWidth * gScreenRatio);
+        gCanvas.setAttribute("height", img2.naturalHeight * gScreenRatio);
 
         gMeme.lines[0].x = img2.naturalWidth / 2;
 
