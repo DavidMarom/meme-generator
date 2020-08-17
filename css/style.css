@@ -2,17 +2,15 @@ html {
     font-family: 'Varela Round', sans-serif;
 }
 
-input{
+input {
     font-family: 'Varela Round', sans-serif;
 }
 
-.aaa select{
-    border:0;
+.aaa select {
+    border: 0;
     font-size: 1rem;
     font-family: 'Varela Round', sans-serif;
-    
 }
-
 
 body {
     margin: 0;
@@ -20,12 +18,18 @@ body {
 }
 
 .disable-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by any browser but < IE9 */
 }
 
 .header {
@@ -57,15 +61,15 @@ h2 {
     color: #727272;
 }
 
-.text-btn{
+.text-btn {
     font-size: 2rem;
     margin: 2px;
     background-color: #ffffff00;
     border-radius: 3px;
-    border:2px dashed #DBDBDB;
+    border: 2px dashed #DBDBDB;
 }
 
-.editor-area h2{
+.editor-area h2 {
     text-align: center;
 }
 
@@ -95,7 +99,6 @@ h2 {
 }
 
 .thumbnails img {
-    /* border-radius: 50px; */
     max-width: 200px;
     max-height: 200px;
     padding: 20px;
@@ -114,11 +117,6 @@ h2 {
     grid-column: auto / span 1;
 }
 
-/* .text-combo p {
-    margin-right: 10px;
-    margin-left: 10px;
-} */
-
 .editor-page {
     max-width: auto;
     max-height: auto;
@@ -131,13 +129,11 @@ h2 {
 }
 
 .editor-area {
-    width:50%;
+    width: 50%;
     background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* max-width: 770px; */
-    /* width:600px; */
     padding: 10px;
 }
 
@@ -178,8 +174,6 @@ h2 {
     justify-content: space-between;
 }
 
-/* THIS */
-
 .search input {
     border: 0;
     width: 90%;
@@ -205,7 +199,6 @@ h2 {
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    /* font-size: 17px; */
     border: 2px dashed #DBDBDB;
     border-radius: 15px;
     width: 65%;
@@ -223,14 +216,11 @@ h2 {
 /*  ------ TABLET ------ */
 
 @media (max-width: 1000px) {
-
-.editor-area{
-    width:80%;
-    margin-right:10%;
-    margin-left: 10%;
-
-}
-
+    .editor-area {
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
     .editor-page {
         max-width: auto;
         max-height: auto;
@@ -293,7 +283,6 @@ h2 {
     }
     .clean-list {
         list-style-type: none;
-        /* margin: 0; */
         padding: 0;
         padding-top: 1rem;
         min-width: 350px;
@@ -312,26 +301,23 @@ h2 {
     }
     .editor-area {
         margin-top: 0;
-        width:100%;
-        margin-right:0%;
+        width: 100%;
+        margin-right: 0%;
         margin-left: 0%;
     }
-    
-
     p {
         font-size: 2rem;
     }
     .combo-toolbar input {
         background-color: rgb(255, 255, 255);
         display: block;
-        border:1px solid #DBDBDB;
+        border: 1px solid #DBDBDB;
     }
     .combo-toolbar {
         display: flex;
         flex-direction: column;
     }
     .title-input {
-        /* width:10px; */
         background-color: rgb(255, 255, 255);
     }
 }

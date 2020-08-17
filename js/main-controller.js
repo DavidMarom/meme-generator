@@ -106,12 +106,11 @@ function populateMemes() {
 
 // RENDER GALLERY
 function populateGallery() {
-    // var imgs = getImgs()
     var strHTML = '';
     var el = document.querySelector('.thumbnails');
     var srchEl = document.getElementById('srch').value;
 
-    for (var i = 1; i < 27; i++) {
+    for (var i = 1; i < 28; i++) {
         if (srchEl == '') {
             strHTML += `<img src="content/${i}.jpg" class="thumbnail" onclick="onThumbnailClicked(${i})" />`;
         } else {

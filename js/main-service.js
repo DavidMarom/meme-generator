@@ -10,31 +10,36 @@ var gKeywords = {
     'man': 1,
     'kid': 1,
     'dog': 14
-
 }
 
 var gImgs = [{
-    keywords: ['trump', 'president', 'man', 'pres', 't', 'fuck']
+    // 1
+    keywords: ['trump', 'president', 'man', 'pres', 't', 'fuck','tr','trum','p','pr','pre','presi','f','fu','fuc']
 }, {
+    // 2
     keywords: ['dr', 'evil', 'movie', 'powers', 'man']
 }, {
+    // 3
     keywords: ['woman', 'oprah', 'tv', 'crazy']
 }, {
-    keywords: ['cat', 'cats', 'cute', 'animals', 'c']
+    // 4
+    keywords: ['dogs', 'love', 'dog', 'animals', 'd']
 }, {
-    keywords: ['kids', 'k']
+    // 5
+    keywords: ['kids', 'k','kid']
 }, {
     keywords: ['funny', 'man']
 }, {
-    keywords: ['kids', 'shocked']
+    keywords: ['kids', 'shocked','kid']
 }, {
     keywords: ['tell me', 'tell', 'movie', 'man', 'm', 'mov']
 }, {
     keywords: ['kids', 'kid', 'funny', 'k']
 }, {
+    // 10
     keywords: ['obama', 'president', 'man', 'pres']
 }, {
-    keywords: ['sport', 'man']
+    keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
 }, {
     keywords: ['israel', 'hebrew', 'man']
 }, {
@@ -50,9 +55,10 @@ var gImgs = [{
 }, {
     keywords: ['animation', 'movie', 'ani', 'man', 'm', 'mov']
 }, {
-    keywords: ['dog', 'dogs', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs']
+    keywords: ['dog', 'dogs', 'baby', 'babies', 'love', 'b', 'd', 'dog', 'dogs','a','an','ani']
 }, {
-    keywords: ['movie', 'woman', 'nature', 'why', 'work', 'w']
+    // 20
+    keywords: ['s','sp','spo','sport','man','m','me','ma','men']
 }, {
     keywords: ['why', 'man', 'm', 'w']
 }, {
@@ -62,9 +68,11 @@ var gImgs = [{
 }, {
     keywords: ['kid', 'kids', 'africa', 'dance']
 }, {
-    keywords: ['trump', 'president', 'p', 'pr', 'pres', 'fuck', 't', 'man', 'd']
+    keywords: ['trump', 'president', 'p', 'pr', 'pres', 'fuck', 't', 'man', 'd','f','fu','fuc']
 }, {
-    keywords: ['dogs', 'love', 'dog', 'animals', 'd']
+    keywords: ['cat', 'cats', 'cute', 'animals', 'c','ca','a','an','ani']
+}, {
+    keywords: ['b','ba','bat','batman','slap']
 }];
 
 var gMeme = {

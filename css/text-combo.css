@@ -16,7 +16,6 @@
     align-items: center;
     padding: 15px;
     border-bottom: 1px solid #DBDBDB;
-    /* max-width: 500px; */
 }
 
 .sticket-toolbar {
@@ -25,7 +24,6 @@
     justify-content: space-between;
     align-items: center;
     font-size: 45px;
-    
     padding: 15px;
     border-bottom: 1px solid #DBDBDB;
     cursor: pointer;
@@ -40,16 +38,13 @@
 }
 
 .line-edit {
-    /* width: 70%; */
     border-bottom: 1px solid #DBDBDB;
-
 }
 
 .line-edit input {
     margin: 20px;
-    /* height: 42px; */
+    height: 42px;
     border: 0px;
-    /* width: 50%; */
 }
 
 .text-btns {
