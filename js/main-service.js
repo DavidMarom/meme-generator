@@ -4,7 +4,7 @@ var gScreenRatio = 1;
 var gUserMemes = [];
 
 var gKeywords = {
-    'fuck': 3,
+    'f@#$': 3,
     'president': 1,
     'woman': 10,
     'man': 1,
@@ -14,7 +14,7 @@ var gKeywords = {
 
 var gImgs = [{
     // 1
-    keywords: ['trump', 'president', 'man', 'pres', 't', 'fuck','tr','trum','p','pr','pre','presi','f','fu','fuc']
+    keywords: ['trump', 'president', 'man', 'pres', 't', 'f@#$','tr','trum','p','pr','pre','presi','f','fu','fuc']
 }, {
     // 2
     keywords: ['dr', 'evil', 'movie', 'powers', 'man']
@@ -68,7 +68,7 @@ var gImgs = [{
 }, {
     keywords: ['kid', 'kids', 'africa', 'dance']
 }, {
-    keywords: ['trump', 'president', 'p', 'pr', 'pres', 'fuck', 't', 'man', 'd','f','fu','fuc']
+    keywords: ['trump', 'president', 'p', 'pr', 'pres', 'f@#$', 't', 'man', 'd','f','fu','fuc']
 }, {
     keywords: ['cat', 'cats', 'cute', 'animals', 'c','ca','a','an','ani']
 }, {
